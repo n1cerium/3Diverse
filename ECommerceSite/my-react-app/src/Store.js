@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './Store.css';
 import { Link } from 'react-router-dom';
 
 export default function Store() {
@@ -9,8 +10,10 @@ export default function Store() {
                     <p>Name</p>
                 </div>
                 <div className="navbar">
-                    <Link to="/Login">Login</Link>
-                    <Link to="/Cart">Cart</Link>
+                    <div className="right">
+                        <Link to="/Login">Login</Link>
+                        <Link to="/Cart">Cart</Link>
+                    </div>
                 </div>
                 <div className="row">
                     <div className="sidebar">
