@@ -4,8 +4,9 @@
     "\\ECommerceSite",
     "\\ECommerceSite\\my-react-app",
     "\\ECommerceSite\\my-react-app\\public",
-    "\\ECommerceSite\\my-react-app\\src"
+    "\\ECommerceSite\\my-react-app\\src",
+    "\\ECommerceSite\\my-react-app\\src\\component"
   ],
-  "SelectedNode": "\\ECommerceSite\\my-react-app\\src\\ghY4rc.webp",
+  "SelectedNode": "\\ECommerceSite\\my-react-app\\package.json",
   "PreviewInSolutionExplorer": false
 }

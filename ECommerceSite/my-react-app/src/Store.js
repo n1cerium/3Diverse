@@ -27,7 +27,7 @@ export default function Store() {
                             <label for="item3"> Anime</label><br/><br/>
                         </div>
                         <div className ="bottom">
-                            <Link to="/About"><h2>About us</h2></Link>
+                            <Link to="/ThreeEx"><h2>Three.js Example</h2></Link>
                         </div>
                     </div>
 
