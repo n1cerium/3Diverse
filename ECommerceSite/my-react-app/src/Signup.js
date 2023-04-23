@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import validate from './ValidateRegister'
+import validate from './ValidateRegister';
+import axios from 'axios';
 
 function Signup() {
     const [infos, setInfos] = useState({
@@ -16,7 +17,7 @@ function Signup() {
         const err = validate(infos);
         setErrors(err);
         if(errors.name === "" && errors.email === "" && errors.password == "") {
-            
+            axios.post('http://localhost:8080/signup', infos);
         }
     }
     const handleInput = (e) => {
