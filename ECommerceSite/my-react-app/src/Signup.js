@@ -13,7 +13,11 @@ function Signup() {
     const [errors, setErrors] = useState({})
     const handleSubmit = (e) => {   
         e.preventDefault();
-        setErrors(validate(infos));
+        const err = validate(infos);
+        setErrors(err);
+        if(errors.name === "" && errors.email === "" && errors.password == "") {
+            
+        }
     }
     const handleInput = (e) => {
         setInfos(prev => ({...prev, [e.target.name]: [e.target.value]}))
