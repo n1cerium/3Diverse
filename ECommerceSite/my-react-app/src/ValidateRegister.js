@@ -17,7 +17,7 @@ function validatePassword(val) {
     if(val.password == "") {
         return "Enter a password";
     }
-    if(val.password.length < 8) { // check for length
+    if(String(val.password).length < 8) { // check for length
         return "The Password must be at least 8 characters long";
     }
     if(/[A-Z]/.test(val.password) == false) { // check for uppercase
