@@ -1,14 +1,17 @@
 import { events } from '@react-three/fiber';
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import validate from './ValidateLogIn'
+import axios from 'axios'
 
 export default function Login() {
     const [infos, setInfos] = useState({
         email: '',
         password: ''
     })
+    const navigate = useNavigate();
+    const [loginState, setLoginState] = useState("");
     const [errors, setErrors] = useState({})
     const handleSubmit = (e) => {   
         e.preventDefault();
@@ -21,7 +24,11 @@ export default function Login() {
         setErrors(err);
         if(err.email === "" && err.password == "") {
             axios.post('http://localhost:8080/login', userData).then(res => {
-                navigate('/Login');
+                if(res.data === "Success") {
+                    navigate('/');
+                } else {
+                    setLoginState("Incorrect email/password");
+                }
             }).catch(err => console.log(err));
         }
     }
@@ -45,6 +52,7 @@ export default function Login() {
                     </div>
                     <button type="submit">Log In</button>
                 </form>
+                {loginState && <span>{loginState}</span>}
                 <br />
                 <Link to="/Signup">Create an Account</Link>
             </div>

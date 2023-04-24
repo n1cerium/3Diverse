@@ -15,12 +15,17 @@ function Signup() {
     const [errors, setErrors] = useState({})
     const handleSubmit = (e) => {   
         e.preventDefault();
+        const userData = {
+            name: infos.name,
+            email: infos.email,
+            password: infos.password
+        }
         const err = validate(infos);
         setErrors(err);
-        if(errors.name === "" && errors.email === "" && errors.password == "") {
-            axios.post('http://localhost:8080/Signup', infos).then(res => {
+        if(err.name === "" && err.email === "" && err.password == "") {
+            axios.post('http://localhost:8080/signup', userData).then(res => {
                 console.log(res);
-                navigate('/');
+                navigate('/Login')
             }).catch(err => console.log(err));
         }
     }
