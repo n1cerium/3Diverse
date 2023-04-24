@@ -12,7 +12,18 @@ export default function Login() {
     const [errors, setErrors] = useState({})
     const handleSubmit = (e) => {   
         e.preventDefault();
-        setErrors(validate(infos));
+        const userData = {
+            name: infos.name,
+            email: infos.email,
+            password: infos.password
+        }
+        const err = validate(infos);
+        setErrors(err);
+        if(err.email === "" && err.password == "") {
+            axios.post('http://localhost:8080/login', userData).then(res => {
+                navigate('/Login');
+            }).catch(err => console.log(err));
+        }
     }
     const handleInput = (e) => {
         setInfos(prev => ({...prev, [e.target.name]: [e.target.value]}))
