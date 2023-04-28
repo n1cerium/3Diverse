@@ -3,10 +3,12 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import validate from './ValidateRegister';
 import axios from 'axios';
+import './Register.css';
 
 function Signup() {
     const [infos, setInfos] = useState({
-        name: '',
+        F_Name: '',
+        L_Name: '',
         email: '',
         password: ''
     });
@@ -16,7 +18,8 @@ function Signup() {
     const handleSubmit = (e) => {   
         e.preventDefault();
         const userData = {
-            name: infos.name,
+            F_Name: infos.F_Name,
+            L_Name: infos.L_Name,
             email: infos.email,
             password: infos.password
         }
@@ -35,23 +38,50 @@ function Signup() {
 
     return (
         <div>
-        <div>
+        <div id="register-form">
             <h2>Register</h2>
             <form action="" onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor='name'>Name</label>
-                    <input type="text" name="name" placeholder='Enter your name...' onChange={handleInput} />
-                    {errors.name && <span>{errors.name}</span>}
+                    <label htmlFor='F_Name'>First Name </label><br/>
+                    <input type="text" name="F_Name" placeholder='John' onChange={handleInput} />
                 </div>
                 <div>
-                    <label htmlFor='email'>Email</label>
-                    <input type="text" name="email" placeholder='Enter your email...' onChange={handleInput} />
+                    <label htmlFor='L_Name'>Last Name </label><br/>
+                    <input type="text" name="L_Name" placeholder='Doe' onChange={handleInput} />
+                </div>
+                <div>
+                    <label htmlFor='email'>Email </label><br/>
+                    <input type="text" name="email" placeholder='johndoe@gmail.com' onChange={handleInput} />
                     {errors.email && <span>{errors.email}</span>}
                 </div>
                 <div>
-                    <label htmlFor='password'>Password</label>
+                    <label htmlFor='phone'>Phone Number </label><br/>
+                    <input type="password" name="phone" placeholder='123-456-7890' onChange={handleInput} />
+                </div>
+                <div>
+                    <label htmlFor='password'>Password </label><br/>
                     <input type="password" name="password" placeholder='Enter your password...' onChange={handleInput} />
                     {errors.password && <span>{errors.password}</span>}
+                </div>
+                <div>
+                    <label htmlFor='line'>Address Line </label><br/>
+                    <input type="password" name="line" placeholder='123 Pummel St' onChange={handleInput} />
+                </div>
+                <div>
+                    <label htmlFor='city'>City </label><br/>
+                    <input type="text" name="city" placeholder='Northridge' onChange={handleInput} />
+                </div>
+                <div>
+                    <label htmlFor='state'>State </label><br/>
+                    <input type="text" name="state" placeholder='California' onChange={handleInput} />
+                </div>
+                <div>
+                    <label htmlFor='country'>State </label><br/>
+                    <input type="text" name="country" placeholder='United State' onChange={handleInput} />
+                </div>
+                <div>
+                    <label htmlFor='zipcode'>Zipcode </label><br/>
+                    <input type="text" name="zipcode" placeholder='12345' onChange={handleInput} />
                 </div>
                 <button>SignUp</button>
             </form>
