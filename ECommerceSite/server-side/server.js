@@ -14,17 +14,47 @@ const db = mysql.createConnection( {
 })
 
 app.post('/signup', (req, res) => {
-    const sql = "INSERT INTO users(`name`, `email`, `password`) VALUES (?, ?, ?)";
-    const values = [
-        req.body.name, 
-        req.body.email,
-        req.body.password
-    ]
-    db.query(sql, values, (err, data) => {
+    const checkEmail = "SELECT `email` FROM users WHERE `email` = ?";
+    db.query(checkEmail, [req.body.email], (err, data) => {
         if(err) {
             return res.json("Error");
         }
-        return res.json(data);
+        if(data.length > 0) {
+            return res.json("Email Fail");
+        }
+        else {
+            const checkPhone = "SELECT `phone number` FROM users WHERE `phone number` = ?";
+            db.query(checkPhone, [req.body.phone], (err2, data2) => {
+                if(err2) {
+                    return res.json("Error");
+                }
+                if(data2.length > 0) {
+                   return res.json("Phone Fail");
+                } else {
+                    const sql = "INSERT INTO users(`first name`, `last name`, `email`, `phone number`, `password`, `address line`, `city`, `state`, `country`, `zipcode`)" + 
+                                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    const values = [
+                        req.body.F_Name,
+                        req.body.L_Name,
+                        req.body.email,
+                        req.body.phone, 
+                        req.body.password,
+                        req.body.address_line,
+                        req.body.city,
+                        req.body.state,
+                        req.body.country,
+                        req.body.zipcode
+                    ]
+                    db.query(sql, values, (err3, data3) => {
+                        if(err3) {
+                            return res.json("Error");
+                        } else {
+                            return res.json("Success");
+                        }
+                    })
+                }
+            })
+        }
     })
 })
 app.post('/login', (req, res) => {

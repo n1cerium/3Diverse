@@ -3,7 +3,7 @@ input[type="text"], input[type="password"] {
     outline: none;
     border-bottom: 1px solid black ;
 }
-form {
+#register-form {
     margin-top: 1em;
     border: 1px solid black;
     width: 30em;
@@ -12,9 +12,29 @@ form {
     row-gap: 0.5em;
 
 }
-#register-form {
+#register-page {
     display: grid;
     justify-content: center;
     align-content: center;
-    margin-top: 10%;
+    margin-top: 3%;
+}
+
+#register-form  label{
+    float: left;
+    margin-bottom: 0.5em;
+    font-size: 15px;
+}
+#register-form > div {
+    margin-left: auto;
+    margin-right: auto;
+}
+#signup-btn {
+    width: 5em;
+    margin-top: 0.5em;
+    justify-self: center;
+}
+.error-message {
+    color:red;
+    font-size:10px;
+    float: left;
 }
