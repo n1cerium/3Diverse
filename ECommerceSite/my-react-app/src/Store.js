@@ -7,7 +7,9 @@ import Box2 from "./component/Box2";
 import Rubiks from "./component/products/Rubiks";
 import Drone from "./component/products/Drone";
 import Mug from "./component/products/Mug";
-import ToyTank from "./component/products/ToyTank";
+import MCPlank from "./component/products/MCPlank";
+import USBDrive from "./component/products/USBDrive";
+
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
@@ -132,7 +134,7 @@ export default function Store() {
                                         <ambientLight intensity={0.5} />
                                         <directionalLight position={[-2, 5, 2]} intensity={1} />
                                         <Suspense fallback={null}>
-                                            <ToyTank />
+                                            <USBDrive />
                                         </Suspense>
                                     </Canvas>
                                     <div className="container">
