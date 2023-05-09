@@ -14,12 +14,12 @@ export default function Store() {
     <>
             <div className="body">
                 <div className="header">
-                    <p>Name</p>
+                    <h1>Name</h1>
                 </div>
                 <div className="navbar">
                     <div className="right">
-                        <Link to="/Login"><h2>Login</h2></Link>
-                        <Link to="/Cart"><h2>Cart</h2></Link>
+                        <Link to="/Login"><h3>Login</h3></Link>
+                        <Link to="/Cart"><h3>Cart</h3></Link>
                     </div>
                 </div>
                 <div className="row">
@@ -52,7 +52,7 @@ export default function Store() {
                         </div>
                         <br /><br /><br /><br />
                         <div className ="bottom">
-                            <Link to="/ThreeEx"><h2>Three.js Example</h2></Link>
+                            <Link to="/ThreeEx"><h3>Three.js Example</h3></Link>
                         </div>
                     </div>
 
@@ -73,7 +73,7 @@ export default function Store() {
                                          <div className="row3">
                                               <h2 className="col-1-1">Item Name</h2>
                                               <h2 className="col-2-1"> $0.00 </h2>
-                                              <p className="col-3-1">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum. Morbi ultrices, velit vel ultrices condimentum, purus lorem dignissim velit, eget gravida nibh risus in nunc. Nam tincidunt, libero ac fermentum accumsan, elit nulla</p>
+                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum. </p>
                                               <button className="col-4-1, disabled"> Add to Cart </button>
                                           </div>
                                     </div>
@@ -94,7 +94,7 @@ export default function Store() {
                                          <div className="row3">
                                              <h2 className="col-1-1">Item Name</h2>
                                              <h2 className="col-2-1"> $0.00 </h2>
-                                             <p className="col-3-1">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum. Morbi ultrices, velit vel ultrices condimentum, purus lorem dignissim velit, eget gravida nibh risus in nunc. Nam tincidunt, libero ac fermentum accumsan, elit nulla</p>
+                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
                                              <button className="col-4-1, disabled"> Add to Cart </button>
                                          </div>
                                     </div>
@@ -114,7 +114,7 @@ export default function Store() {
                                          <div className="row3">
                                              <h2 className="col-1-1">Item Name</h2>
                                              <h2 className="col-2-1"> $0.00 </h2>
-                                             <p className="col-3-1">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum. Morbi ultrices, velit vel ultrices condimentum, purus lorem dignissim velit, eget gravida nibh risus in nunc. Nam tincidunt, libero ac fermentum accumsan, elit nulla</p>
+                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
                                              <button className="col-4-1, disabled"> Add to Cart </button>
                                          </div>
                                     </div>
@@ -134,7 +134,7 @@ export default function Store() {
                                          <div className="row3">
                                              <h2 className="col-1-1">Item Name</h2>
                                              <h2 className="col-2-1"> $0.00 </h2>
-                                             <p className="col-3-1">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum. Morbi ultrices, velit vel ultrices condimentum, purus lorem dignissim velit, eget gravida nibh risus in nunc. Nam tincidunt, libero ac fermentum accumsan, elit nulla</p>
+                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
                                              <button className="col-4-1, disabled"> Add to Cart </button>
                                          </div>
                                     </div>
@@ -145,8 +145,8 @@ export default function Store() {
                 </div>
 
                 <div className="footer">
-                    <p>contact us at: <a href="#" target="_blank">Name@Emerch.com</a></p>
-                    <p>Click here to subscribe to email letter: <a href="#" target="_blank">subscribe</a></p>
+                    <p className="textSize2">contact us at: <a href="#" target="_blank">Name@Emerch.com</a></p>
+                    <p className="textSize2">Click here to subscribe to email letter: <a href="#" target="_blank">subscribe</a></p>
                 </div>
             </div>
     </>
