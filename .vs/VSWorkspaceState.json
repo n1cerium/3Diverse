@@ -5,8 +5,10 @@
     "\\ECommerceSite\\my-react-app",
     "\\ECommerceSite\\my-react-app\\public",
     "\\ECommerceSite\\my-react-app\\src",
-    "\\ECommerceSite\\my-react-app\\src\\component"
+    "\\ECommerceSite\\my-react-app\\src\\component",
+    "\\ECommerceSite\\my-react-app\\src\\component\\products",
+    "\\ECommerceSite\\my-react-app\\src\\models"
   ],
-  "SelectedNode": "\\ECommerceSite\\my-react-app\\src\\ghY4rc.webp",
+  "SelectedNode": "\\ECommerceSite\\my-react-app\\src\\models\\mug.mtl",
   "PreviewInSolutionExplorer": false
 }

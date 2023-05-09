@@ -9,7 +9,6 @@ import Drone from "./component/products/Drone";
 import Mug from "./component/products/Mug";
 import MCPlank from "./component/products/MCPlank";
 import USBDrive from "./component/products/USBDrive";
-import Rccar from "./component/products/Rccar";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
@@ -80,10 +79,10 @@ export default function Store() {
                                     </Canvas>
                                     <div className="container">
                                          <div className="row3">
-                                              <h2 className="col-1-1">Item Name</h2>
-                                              <h2 className="col-2-1"> $0.00 </h2>
-                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum. </p>
-                                              <button className="col-4-1"> Add to Cart </button>
+                                             <h2 className="col-1-1">Rubiks Cube</h2>
+                                             <h2 className="col-2-1"> $13.99 </h2>
+                                            <p className="col-3-1, textSize2">The Original 3x3 Cube 3D Puzzle Fidget Cube Stress Relief Fidget Toy Brain. </p>
+                                             <button className="col-4-1"> Add to Cart </button>
                                           </div>
                                     </div>
                                 </div>
@@ -101,9 +100,9 @@ export default function Store() {
                                     </Canvas>
                                     <div className="container">
                                          <div className="row3">
-                                             <h2 className="col-1-1">Item Name</h2>
-                                             <h2 className="col-2-1"> $0.00 </h2>
-                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
+                                             <h2 className="col-1-1">HS Drone</h2>
+                                             <h2 className="col-2-1"> $269.99 </h2>
+                                            <p className="col-3-1, textSize2">GPS Drone with 4K EIS UHD 130 FOV Camera for Adults Beginner, FPV Quadcopter with Brushless Motor, 2 Batteries 46 Min Flight Time, 5GHz Transmission, Smart Return Home.</p>
                                              <button className="col-4-1"> Add to Cart </button>
                                          </div>
                                     </div>
@@ -121,9 +120,9 @@ export default function Store() {
                                     </Canvas>
                                     <div className="container">
                                          <div className="row3">
-                                             <h2 className="col-1-1">Item Name</h2>
-                                             <h2 className="col-2-1"> $0.00 </h2>
-                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
+                                             <h2 className="col-1-1">Mug</h2>
+                                             <h2 className="col-2-1"> $4.99 </h2>
+                                            <p className="col-3-1, textSize2">Ceramic-Coated, Dishwasher & Microwave Safe Mug, 12 fl oz.</p>
                                              <button className="col-4-1"> Add to Cart </button>
                                          </div>
                                     </div>
@@ -141,9 +140,9 @@ export default function Store() {
                                     </Canvas>
                                     <div className="container">
                                          <div className="row3">
-                                             <h2 className="col-1-1">Item Name</h2>
-                                             <h2 className="col-2-1"> $0.00 </h2>
-                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
+                                             <h2 className="col-1-1">USB Drive</h2>
+                                             <h2 className="col-2-1"> $7.99 </h2>
+                                            <p className="col-3-1, textSize2">64GB High Performance USB 3.2 Metal Flash Drive | Speeds up to 200MB/s.</p>
                                              <button className="col-4-1"> Add to Cart </button>
                                          </div>
                                     </div>
@@ -156,40 +155,20 @@ export default function Store() {
                                         <ambientLight intensity={0.5} />
                                         <directionalLight position={[-2, 5, 2]} intensity={1} />
                                         <Suspense fallback={null}>
-                                            <Rccar />
+                                            <MCPlank />
                                         </Suspense>
                                     </Canvas>
                                     <div className="container">
                                         <div className="row3">
-                                            <h2 className="col-1-1">Item Name</h2>
-                                            <h2 className="col-2-1"> $0.00 </h2>
-                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
+                                            <h2 className="col-1-1">MineCraft Plank</h2>
+                                            <h2 className="col-2-1"> $25.99 </h2>
+                                            <p className="col-3-1, textSize2">MineCraft Plank Light, Battery Powered.</p>
                                             <button className="col-4-1"> Add to Cart </button>
                                         </div>
                                     </div>
                                 </div>
                             </article>
                             <article className="col-6">
-                                <div className="card">
-                                    <Canvas className="canvas">
-                                        <OrbitControls enableZoom={false} />
-                                        <ambientLight intensity={0.5} />
-                                        <directionalLight position={[-2, 5, 2]} intensity={1} />
-                                        <Suspense fallback={null}>
-                                            <MCPlank />
-                                        </Suspense>
-                                    </Canvas>
-                                    <div className="container">
-                                        <div className="row3">
-                                            <h2 className="col-1-1">Item Name</h2>
-                                            <h2 className="col-2-1"> $0.00 </h2>
-                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
-                                            <button className="col-4-1"> Add to Cart </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article className="col-7">
                                 <div className="card">
                                     <Canvas className="canvas">
                                         <OrbitControls enableZoom={false} />
