@@ -5,8 +5,9 @@
     "\\ECommerceSite\\my-react-app",
     "\\ECommerceSite\\my-react-app\\public",
     "\\ECommerceSite\\my-react-app\\src",
-    "\\ECommerceSite\\my-react-app\\src\\component"
+    "\\ECommerceSite\\my-react-app\\src\\component",
+    "\\ECommerceSite\\my-react-app\\src\\images"
   ],
-  "SelectedNode": "\\ECommerceSite\\my-react-app\\package.json",
+  "SelectedNode": "\\ECommerceSite\\my-react-app\\src\\ValidateLogIn.js",
   "PreviewInSolutionExplorer": false
 }
