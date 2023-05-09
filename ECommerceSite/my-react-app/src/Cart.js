@@ -17,7 +17,7 @@
             ))}
             </ul>
         )}
-        <Link to="/" className="continue-shopping-link">Continue Shopping</Link>
+        <Link to="/Store" className="continue-shopping-link">Continue Shopping</Link>
         </div>
     );
     }
