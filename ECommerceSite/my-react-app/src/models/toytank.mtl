@@ -1,0 +1,16 @@
+# Blender MTL File: 'toytank.blend'
+# Material Count: 1
+
+newmtl ToyTank
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.042005 D:\\CSUN\\Spring 2023\\COMP 584\\Models\\ToyTank\\ToyTank\\textures\\ToyTank_Normal.png
+map_Kd D:\\CSUN\\Spring 2023\\COMP 584\\Models\\ToyTank\\ToyTank\\textures\\ToyTank_Albedo.png
+map_Ks D:\\CSUN\\Spring 2023\\COMP 584\\Models\\ToyTank\\ToyTank\\textures\\ToyTank_Metallic.png
+map_Ns D:\\CSUN\\Spring 2023\\COMP 584\\Models\\ToyTank\\ToyTank\\textures\\ToyTank_Roughness.png

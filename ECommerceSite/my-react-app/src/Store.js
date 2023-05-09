@@ -4,6 +4,11 @@ import './Store.css';
 import { Link } from 'react-router-dom';
 import Box2 from "./component/Box2";
 
+import Rubiks from "./component/products/Rubiks";
+import Drone from "./component/products/Drone";
+import Mug from "./component/products/Mug";
+import ToyTank from "./component/products/ToyTank";
+
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import './ThreeEx.css';
@@ -61,14 +66,14 @@ export default function Store() {
        
                             <article className="col-1">
                                 <div className="card">
-                                     <Canvas className="canvas">
-                                         <OrbitControls enableZoom={false} />
-                                         <ambientLight intensity={0.5} />
-                                         <directionalLight position={[-2, 5, 2]} intensity={1} />
-                                         <Suspense fallback={null}>
-                                             <Box2 />
-                                         </Suspense>
-                                     </Canvas>
+                                    <Canvas className="canvas">
+                                        <OrbitControls enableZoom={false} />
+                                        <ambientLight intensity={0.5} />
+                                        <directionalLight position={[-2, 5, 2]} intensity={1} />
+                                        <Suspense fallback={null}>
+                                            <Rubiks />
+                                        </Suspense>
+                                    </Canvas>
                                     <div className="container">
                                          <div className="row3">
                                               <h2 className="col-1-1">Item Name</h2>
@@ -82,14 +87,14 @@ export default function Store() {
                                 
                             <article className="col-2">
                                 <div className="card">
-                                     <Canvas className="canvas">
-                                         <OrbitControls enableZoom={false} />
-                                         <ambientLight intensity={0.5} />
-                                         <directionalLight position={[-2, 5, 2]} intensity={1} />
-                                         <Suspense fallback={null}>
-                                             <Box2 />
-                                         </Suspense>
-                                     </Canvas>
+                                    <Canvas className="canvas">
+                                        <OrbitControls enableZoom={false} />
+                                        <ambientLight intensity={0.5} />
+                                        <directionalLight position={[-2, 5, 2]} intensity={1} />
+                                        <Suspense fallback={null}>
+                                            <Drone />
+                                        </Suspense>
+                                    </Canvas>
                                     <div className="container">
                                          <div className="row3">
                                              <h2 className="col-1-1">Item Name</h2>
@@ -102,14 +107,14 @@ export default function Store() {
                             </article>
                             <article className="col-3">
                                 <div className="card">
-                                     <Canvas className="canvas">
-                                         <OrbitControls enableZoom={false} />
-                                         <ambientLight intensity={0.5} />
-                                         <directionalLight position={[-2, 5, 2]} intensity={1} />
-                                         <Suspense fallback={null}>
-                                             <Box2 />
-                                         </Suspense>
-                                     </Canvas>
+                                    <Canvas className="canvas">
+                                        <OrbitControls enableZoom={false} />
+                                        <ambientLight intensity={0.5} />
+                                        <directionalLight position={[-2, 5, 2]} intensity={1} />
+                                        <Suspense fallback={null}>
+                                            <Mug />
+                                        </Suspense>
+                                    </Canvas>
                                     <div className="container">
                                          <div className="row3">
                                              <h2 className="col-1-1">Item Name</h2>
@@ -122,14 +127,14 @@ export default function Store() {
                             </article>
                             <article className="col-4">
                                 <div className="card">
-                                     <Canvas className="canvas">
-                                         <OrbitControls enableZoom={false} />
-                                         <ambientLight intensity={0.5} />
-                                         <directionalLight position={[-2, 5, 2]} intensity={1} />
-                                         <Suspense fallback={null}>
-                                             <Box2 />
-                                         </Suspense>
-                                     </Canvas>
+                                    <Canvas className="canvas">
+                                        <OrbitControls enableZoom={false} />
+                                        <ambientLight intensity={0.5} />
+                                        <directionalLight position={[-2, 5, 2]} intensity={1} />
+                                        <Suspense fallback={null}>
+                                            <ToyTank />
+                                        </Suspense>
+                                    </Canvas>
                                     <div className="container">
                                          <div className="row3">
                                              <h2 className="col-1-1">Item Name</h2>
