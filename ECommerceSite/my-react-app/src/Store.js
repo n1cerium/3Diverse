@@ -2,14 +2,14 @@
 import React, { Suspense } from 'react';
 import './Store.css';
 import { Link } from 'react-router-dom';
-import Box2 from "./component/Box2";
 
+import Box2 from "./component/Box2";
 import Rubiks from "./component/products/Rubiks";
 import Drone from "./component/products/Drone";
 import Mug from "./component/products/Mug";
 import MCPlank from "./component/products/MCPlank";
 import USBDrive from "./component/products/USBDrive";
-
+import Rccar from "./component/products/Rccar";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
@@ -39,20 +39,22 @@ export default function Store() {
                                     <input type="checkbox" id="item1" name="item1" value="Clothes"/>
                                         <label for="item1"> Clothes</label><br/>
                                     <input type="checkbox" id="item2" name="item2" value="Food"/>
-                                        <label for="item2"> Food</label><br/>
-                                    <input type="checkbox" id="item3" name="item3" value="Anime"/>
-                                        <label for="item3"> Anime</label><br/><br/>
+                                        <label for="item2"> Food</label><br />
+                                    <input type="checkbox" id="item3" name="item3" value="Toys" />
+                                        <label for="item3"> Toys</label><br />
+                                    <input type="checkbox" id="item4" name="item4" value="Anime"/>
+                                        <label for="item4"> Anime</label><br/><br/>
                                 </div>
                             </div>
                             <div className="col-2-2">
                                 <h3>Price:</h3>
                                  <div className="textSize">
-                                     <input type="checkbox" id="item4" name="item4" value="<$25" />
-                                         <label for="item4"> under $25 </label><br />
-                                     <input type="checkbox" id="item5" name="item5" value="$25-$50" />
-                                         <label for="item5"> $25-$50 </label><br />
-                                     <input type="checkbox" id="item6" name="item6" value=">$100" />
-                                         <label for="item6"> over $100 </label><br /><br />
+                                     <input type="checkbox" id="item5" name="item5" value="<$25" />
+                                         <label for="item5"> under $25 </label><br />
+                                     <input type="checkbox" id="item6" name="item6" value="$25-$50" />
+                                         <label for="item6"> $25-$50 </label><br />
+                                     <input type="checkbox" id="item7" name="item7" value=">$100" />
+                                         <label for="item7"> over $100 </label><br /><br />
                                  </div>
                             </div>
                             <input className="input" type="submit" value="Submit"/>
@@ -81,7 +83,7 @@ export default function Store() {
                                               <h2 className="col-1-1">Item Name</h2>
                                               <h2 className="col-2-1"> $0.00 </h2>
                                             <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum. </p>
-                                              <button className="col-4-1, disabled"> Add to Cart </button>
+                                              <button className="col-4-1"> Add to Cart </button>
                                           </div>
                                     </div>
                                 </div>
@@ -102,7 +104,7 @@ export default function Store() {
                                              <h2 className="col-1-1">Item Name</h2>
                                              <h2 className="col-2-1"> $0.00 </h2>
                                             <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
-                                             <button className="col-4-1, disabled"> Add to Cart </button>
+                                             <button className="col-4-1"> Add to Cart </button>
                                          </div>
                                     </div>
                                 </div>
@@ -122,7 +124,7 @@ export default function Store() {
                                              <h2 className="col-1-1">Item Name</h2>
                                              <h2 className="col-2-1"> $0.00 </h2>
                                             <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
-                                             <button className="col-4-1, disabled"> Add to Cart </button>
+                                             <button className="col-4-1"> Add to Cart </button>
                                          </div>
                                     </div>
                                 </div>
@@ -142,8 +144,68 @@ export default function Store() {
                                              <h2 className="col-1-1">Item Name</h2>
                                              <h2 className="col-2-1"> $0.00 </h2>
                                             <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
-                                             <button className="col-4-1, disabled"> Add to Cart </button>
+                                             <button className="col-4-1"> Add to Cart </button>
                                          </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article className="col-5">
+                                <div className="card">
+                                    <Canvas className="canvas">
+                                        <OrbitControls enableZoom={false} />
+                                        <ambientLight intensity={0.5} />
+                                        <directionalLight position={[-2, 5, 2]} intensity={1} />
+                                        <Suspense fallback={null}>
+                                            <Rccar />
+                                        </Suspense>
+                                    </Canvas>
+                                    <div className="container">
+                                        <div className="row3">
+                                            <h2 className="col-1-1">Item Name</h2>
+                                            <h2 className="col-2-1"> $0.00 </h2>
+                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
+                                            <button className="col-4-1"> Add to Cart </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article className="col-6">
+                                <div className="card">
+                                    <Canvas className="canvas">
+                                        <OrbitControls enableZoom={false} />
+                                        <ambientLight intensity={0.5} />
+                                        <directionalLight position={[-2, 5, 2]} intensity={1} />
+                                        <Suspense fallback={null}>
+                                            <MCPlank />
+                                        </Suspense>
+                                    </Canvas>
+                                    <div className="container">
+                                        <div className="row3">
+                                            <h2 className="col-1-1">Item Name</h2>
+                                            <h2 className="col-2-1"> $0.00 </h2>
+                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
+                                            <button className="col-4-1"> Add to Cart </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article className="col-7">
+                                <div className="card">
+                                    <Canvas className="canvas">
+                                        <OrbitControls enableZoom={false} />
+                                        <ambientLight intensity={0.5} />
+                                        <directionalLight position={[-2, 5, 2]} intensity={1} />
+                                        <Suspense fallback={null}>
+                                            <Box2 />
+                                        </Suspense>
+                                    </Canvas>
+                                    <div className="container">
+                                        <div className="row3">
+                                            <h2 className="col-1-1">Item Name</h2>
+                                            <h2 className="col-2-1"> $0.00 </h2>
+                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
+                                            <button className="col-4-1, disabled"> Add to Cart </button>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
