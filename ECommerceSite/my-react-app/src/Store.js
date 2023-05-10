@@ -9,6 +9,7 @@ import Drone from "./component/products/Drone";
 import Mug from "./component/products/Mug";
 import MCPlank from "./component/products/MCPlank";
 import USBDrive from "./component/products/USBDrive";
+import Keyboard from "./component/products/Keyboard";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
@@ -77,13 +78,15 @@ export default function Store() {
                                             <Rubiks />
                                         </Suspense>
                                     </Canvas>
-                                    <div className="container">
-                                         <div className="row3">
-                                             <h2 className="col-1-1">Rubiks Cube</h2>
-                                             <h2 className="col-2-1"> $13.99 </h2>
-                                            <p className="col-3-1, textSize2">The Original 3x3 Cube 3D Puzzle Fidget Cube Stress Relief Fidget Toy Brain. </p>
-                                             <button className="col-4-1"> Add to Cart </button>
-                                          </div>
+                                    <div className="description">
+                                        <div className="descriptionCol1">
+                                            <h2>Rubiks Cube</h2>
+                                            <p>The Original 3x3 Cube 3D Puzzle Fidget Cube Stress Relief Fidget Toy Brain. </p>
+                                        </div>
+                                        <div className="descriptionCol2">
+                                            <h2> $13.99 </h2>
+                                            <button> Add to Cart </button>
+                                        </div>
                                     </div>
                                 </div>
                              </article>
@@ -98,13 +101,16 @@ export default function Store() {
                                             <Drone />
                                         </Suspense>
                                     </Canvas>
-                                    <div className="container">
-                                         <div className="row3">
-                                             <h2 className="col-1-1">HS Drone</h2>
-                                             <h2 className="col-2-1"> $269.99 </h2>
-                                            <p className="col-3-1, textSize2">GPS Drone with 4K EIS UHD 130 FOV Camera for Adults Beginner, FPV Quadcopter with Brushless Motor, 2 Batteries 46 Min Flight Time, 5GHz Transmission, Smart Return Home.</p>
-                                             <button className="col-4-1"> Add to Cart </button>
-                                         </div>
+                                    <div className="description">
+                                        <div className="descriptionCol1">
+                                            <h2>HS Drone</h2>
+                                            <p>GPS Drone with 4K Camera; FPV Quadcopter with Brushless Motor; Smart Return Home.</p>
+                                            {/* <p>GPS Drone with 4K EIS UHD 130 FOV Camera for Adults Beginner, FPV Quadcopter with Brushless Motor, 2 Batteries 46 Min Flight Time, 5GHz Transmission, Smart Return Home.</p> */}
+                                        </div>
+                                        <div className="descriptionCol2">
+                                            <h2> $269.99 </h2>
+                                            <button> Add to Cart </button>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
@@ -118,13 +124,15 @@ export default function Store() {
                                             <Mug />
                                         </Suspense>
                                     </Canvas>
-                                    <div className="container">
-                                         <div className="row3">
-                                             <h2 className="col-1-1">Mug</h2>
-                                             <h2 className="col-2-1"> $4.99 </h2>
-                                            <p className="col-3-1, textSize2">Ceramic-Coated, Dishwasher & Microwave Safe Mug, 12 fl oz.</p>
-                                             <button className="col-4-1"> Add to Cart </button>
-                                         </div>
+                                    <div className="description">
+                                        <div className="descriptionCol1">
+                                            <h2>Mug</h2>
+                                            <p>Ceramic-Coated, Dishwasher & Microwave Safe Mug, 12 fl oz.</p>
+                                        </div>
+                                        <div className="descriptionCol2">
+                                            <h2> $4.99 </h2>
+                                            <button> Add to Cart </button>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
@@ -138,13 +146,15 @@ export default function Store() {
                                             <USBDrive />
                                         </Suspense>
                                     </Canvas>
-                                    <div className="container">
-                                         <div className="row3">
-                                             <h2 className="col-1-1">USB Drive</h2>
-                                             <h2 className="col-2-1"> $7.99 </h2>
-                                            <p className="col-3-1, textSize2">64GB High Performance USB 3.2 Metal Flash Drive | Speeds up to 200MB/s.</p>
-                                             <button className="col-4-1"> Add to Cart </button>
-                                         </div>
+                                    <div className="description">
+                                        <div className="descriptionCol1">
+                                            <h2>USB Drive</h2>
+                                            <p>64GB High Performance USB 3.2 Metal Flash Drive | Speeds up to 200MB/s.</p>
+                                        </div>
+                                        <div className="descriptionCol2">
+                                            <h2> $7.99 </h2>
+                                            <button> Add to Cart </button>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
@@ -158,12 +168,14 @@ export default function Store() {
                                             <MCPlank />
                                         </Suspense>
                                     </Canvas>
-                                    <div className="container">
-                                        <div className="row3">
-                                            <h2 className="col-1-1">MineCraft Plank</h2>
-                                            <h2 className="col-2-1"> $25.99 </h2>
-                                            <p className="col-3-1, textSize2">MineCraft Plank Light, Battery Powered.</p>
-                                            <button className="col-4-1"> Add to Cart </button>
+                                    <div className="description">
+                                        <div className="descriptionCol1">
+                                            <h2>MineCraft Plank</h2>
+                                            <p>MineCraft Plank Light, Battery Powered.</p>
+                                        </div>
+                                        <div className="descriptionCol2">
+                                            <h2> $25.99 </h2>
+                                            <button> Add to Cart </button>
                                         </div>
                                     </div>
                                 </div>
@@ -175,15 +187,17 @@ export default function Store() {
                                         <ambientLight intensity={0.5} />
                                         <directionalLight position={[-2, 5, 2]} intensity={1} />
                                         <Suspense fallback={null}>
-                                            <Box2 />
+                                            <Keyboard />
                                         </Suspense>
                                     </Canvas>
-                                    <div className="container">
-                                        <div className="row3">
-                                            <h2 className="col-1-1">Item Name</h2>
-                                            <h2 className="col-2-1"> $0.00 </h2>
-                                            <p className="col-3-1, textSize2">Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor condimentum condimentum.</p>
-                                            <button className="col-4-1, disabled"> Add to Cart </button>
+                                    <div className="description">
+                                        <div className="descriptionCol1">
+                                            <h2>Keyboard</h2>
+                                            <p>Wireless keyboard that works on various devices. Long-lasting rechargable battery. Splash proof design.</p>
+                                        </div>
+                                        <div className="descriptionCol2">
+                                            <h2> $18.99 </h2>
+                                            <button> Add to Cart </button>
                                         </div>
                                     </div>
                                 </div>
