@@ -1,0 +1,142 @@
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 22rem;
+    height: 5rem;
+    border-radius: 10rem;
+    background-color: black;
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    border: 6px solid black;
+    letter-spacing: 0.25em;
+    font-weight: 200;
+    overflow: hidden;
+    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.25);
+    user-select: none;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+    .button_wrapper:hover {
+        transform: scale(110%);
+    }
+
+    .button_wrapper::before {
+        content: "LOADING";
+        position: absolute;
+        background-color: white;
+        height: 5rem;
+        width: 5rem; /* 22REM */
+        color: black;
+        display: flex;
+        border-radius: 10rem;
+        align-items: center;
+        overflow: hidden;
+        padding-left: 2rem;
+        box-sizing: border-box;
+    }
+
+.loading.button_wrapper::before {
+    animation: reveal 1s ease-in-out 300ms forwards;
+}
+
+.done.button_wrapper::before {
+    right: 0;
+    width: 22rem;
+    animation: hideLoad 1s ease-in-out 50ms forwards;
+}
+
+.icon {
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    background-color: white;
+    color: black;
+}
+
+    .icon > svg {
+        padding: 1.5rem;
+        transition: 300ms;
+    }
+
+.loading.button_wrapper > .icon {
+    animation: loadIcon 1s ease-in-out 300ms forwards;
+}
+
+    .loading.button_wrapper > .icon > svg {
+        transform: rotatez(-90deg);
+    }
+
+.button_wrapper::after {
+    content: "Start Shopping";
+    height: 100%;
+    width: 22rem;
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    padding-left: 6rem;
+}
+
+.done.button_wrapper::after {
+    content: "Welcome to store page";
+    padding-left: 2.5rem;
+}
+
+.reset.hidden {
+    transform: translateY(-50rem);
+    transition: 500ms;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reset {
+    position: fixed;
+    top: 0;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #20202022;
+    border-radius: 5rem;
+    color: black;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.125em;
+    transform: translateY(0);
+    transition: 500ms;
+    transition-delay: 1s;
+    user-select: none;
+    cursor: pointer;
+}
+
+@keyframes loadIcon {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(17rem);
+    }
+}
+
+@keyframes reveal {
+    width: 0%;
+}
+
+    
+
+
