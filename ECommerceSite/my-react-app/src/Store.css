@@ -156,25 +156,26 @@ input {
     background-color: white;
     position: relative;
 }
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-        cursor: pointer;
-    }
-        .card:hover div {
-            width: 100%;
-            padding: 8px 15px;
-            visibility: visible;
-            opacity: 0.9;
-        }
 
-.container {
-    padding: 2px 16px;
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.card:hover div {
+    visibility: visible;
+    opacity: 0.9;
+}
+
+.description {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    width: 100%;
     position: absolute;
     bottom: 0;
     right: 0;
     background: #03a9f4;
     color: black;
-    margin-bottom: 5px;
     font-family: sans-serif;
     opacity: 0;
     visibility: hidden;
@@ -182,15 +183,28 @@ input {
     transition: visibility 0s, opacity 0.5s linear;
 }
 
+.description h2 {
+    padding-bottom: 2px;
+}
+
+.descriptionCol1 {
+    padding: 5px 0px 10px 5px;
+}
+
+.descriptionCol2 {
+    padding: 5px 0px 10px 5px;
+}
+
 .canvas {
     height: 100%;
     position: relative;
+    padding-bottom: 50px;
     background: #1f1144;
 }
 
-button {
+.description button {
     border: 1px solid #fd6350 !important;
-    padding: 0px;
+    padding: 0px 10px;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
@@ -198,11 +212,11 @@ button {
     margin: auto;
     font-size: 16px;
 }
-    button:hover {
-        background-color: orange !important;
-        box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
-        transform: translateY(-10px);
-    }
+
+.description button:hover {
+    background-color: orange !important;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+}
 
 .disabled {
     opacity: 0.6;
@@ -212,7 +226,6 @@ button {
 .row2 {
     display: grid;
     gap: 30px;
-    
 }
 
 .zoom {
@@ -230,27 +243,38 @@ button {
     gap: 10px;
 }
 
+.col-1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.col-2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.col-3 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.col-4 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+.col-5 {
+    grid-column: 1/2;
+    grid-row: 5/6;
+}
+
+.col-6 {
+    grid-column: 1/2;
+    grid-row: 6/7;
+}
+
 /* Tablet Landscape Screen Sizes */
 @media only screen and (min-width: 480px) {
-    .col-1 {
-        grid-column: 1/2;
-        grid-row: 1/2;
-    }
-
-    .col-2 {
-        grid-column: 1/2;
-        grid-row: 2/3;
-    }
-
-    .col-3 {
-        grid-column: 1/2;
-        grid-row: 3/4;
-    }
-
-    .col-4 {
-        grid-column: 1/2;
-        grid-row: 4/5;
-    }
     .col-1-2 {
         grid-column: 1/2;
         grid-row: 1/2;
@@ -259,6 +283,38 @@ button {
     .col-2-2 {
         grid-column: 2/3;
         grid-row: 1/2;
+    }
+}
+
+@media only screen and (min-width: 1028px) {
+    .col-1 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .col-2 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .col-3 {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .col-4 {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .col-5 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .col-6 {
+        grid-column: 2/3;
+        grid-row: 3/4;
     }
 }
 
@@ -282,6 +338,16 @@ button {
     .col-4 {
         grid-column: 2/3;
         grid-row: 2/3;
+    }
+
+    .col-5 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .col-6 {
+        grid-column: 2/3;
+        grid-row: 3/4;
     }
 
     .col-1-2 {
