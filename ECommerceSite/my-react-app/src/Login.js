@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import validate from './ValidateLogIn'
 import axios from 'axios'
+import './Login.css';
 
 export default function Login() {
     const [infos, setInfos] = useState({
@@ -36,21 +37,21 @@ export default function Login() {
         setInfos(prev => ({...prev, [e.target.name]: [e.target.value]}))
     }
     return (
-        <div>
-            <div>
+        <div id="login-body">
+            <div id="login-page">
                 <h2>Log In</h2>
-                <form action="" onSubmit={handleSubmit}>
+                <form className="form" id="login-form" action="" onSubmit={handleSubmit}>
                     <div>
-                        <label htmlFor='email'>Email</label>
+                        <label htmlFor='email'>Email</label> <br/>
                         <input type="text" name="email" placeholder='Enter your email...' onChange={handleInput}/>
                         {errors.email && <span>{errors.email}</span>}
                     </div>
                     <div>
-                        <label htmlFor='password'>Password</label>
+                        <label htmlFor='password'>Password</label> <br/>
                         <input type="password" name="password" placeholder='Enter your password...' onChange={handleInput} />
                         {errors.password && <span>{errors.password}</span>}
                     </div>
-                    <button type="submit">Log In</button>
+                    <button id="login-btn" type="submit">Log In</button>
                 </form>
                 {loginState && <span>{loginState}</span>}
                 <br />

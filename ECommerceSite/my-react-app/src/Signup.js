@@ -6,6 +6,7 @@ import axios from 'axios';
 import './Register.css';
 
 function Signup() {
+    
     const [infos, setInfos] = useState({
         F_Name: '',
         L_Name: '',
@@ -64,67 +65,67 @@ function Signup() {
 
     return (
         <div id="register-body">
-        <div id="register-page">
-            <h2>Register</h2>
-            <form id="register-form" action="" onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor='F_Name'>First Name </label><br/>
-                    <input type="text" name="F_Name" placeholder='John' onChange={handleInput} /><br/>
-                    {errors.F_Name && <span className="error-message">{errors.F_Name}</span>}
-                </div>
-                <div>
-                    <label htmlFor='L_Name'>Last Name </label><br/>
-                    <input type="text" name="L_Name" placeholder='Doe' onChange={handleInput} /><br/>
-                    {errors.L_Name && <span className="error-message">{errors.L_Name}</span>}
-                </div>
-                <div>
-                    <label htmlFor='email'>Email </label><br/>
-                    <input type="text" name="email" placeholder='johndoe@gmail.com' onChange={handleInput} /><br/>
-                    {errors.email && <span className="error-message">{errors.email}</span>}
-                </div>
-                <div>
-                    <label htmlFor='phone'>Phone Number </label><br/>
-                    <input type="text" name="phone" placeholder='123-456-7890' onChange={handleInput} /><br/>
-                    {errors.phone_number && <span className="error-message">{errors.phone_number}</span>}
-                    
-                </div>
-                <div>
-                    <label htmlFor='password'>Password </label><br/>
-                    <input type="password" name="password" placeholder='Enter your password...' onChange={handleInput} /><br/>
-                    {errors.password && <span className="error-message">{errors.password}</span>}
-                </div>
-                <div>
-                    <label htmlFor='address_line'>Address Line </label><br/>
-                    <input type="text" name="address_line" placeholder='123 Pummel St' onChange={handleInput} /><br/>
-                    {errors.address_line && <span className="error-message">{errors.address_line}</span>}
-                </div>
-                <div>
-                    <label htmlFor='city'>City </label><br/>
-                    <input type="text" name="city" placeholder='Northridge' onChange={handleInput} /><br/>
-                    {errors.city && <span className="error-message">{errors.city}</span>}
-                </div>
-                <div>
-                    <label htmlFor='state'>State </label><br/>
-                    <input type="text" name="state" placeholder='California' onChange={handleInput} /><br/>
-                    {errors.state && <span className="error-message">{errors.state}</span>}
-                </div>
-                <div>
-                    <label htmlFor='country'>State </label><br/>
-                    <input type="text" name="country" placeholder='United State' onChange={handleInput} /><br/>
-                    {errors.country && <span className="error-message">{errors.country}</span>}
-                </div>
-                <div>
-                    <label htmlFor='zipcode'>Zipcode </label><br/>
-                    <input type="text" name="zipcode" placeholder='12345' onChange={handleInput} /><br/>
-                    {errors.zipcode && <span className="error-message">{errors.zipcode}</span>}
-                </div>
-                <button id="signup-btn">SignUp</button>
-                {registerState && <span className="error-message">{registerState}</span>}
-            </form>
-            <br />
-            <Link to="/Login">Already have an account?</Link>
+            <div id="register-page">
+                <h2>Register</h2>
+                <form className="form" action="" onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor='F_Name'>First Name </label><br/>
+                        <input type="text" name="F_Name" placeholder='John' onChange={handleInput} /><br/>
+                        {errors.F_Name && <span className="error-message">{errors.F_Name}</span>}
+                    </div>
+                    <div>
+                        <label htmlFor='L_Name'>Last Name </label><br/>
+                        <input type="text" name="L_Name" placeholder='Doe' onChange={handleInput} /><br/>
+                        {errors.L_Name && <span className="error-message">{errors.L_Name}</span>}
+                    </div>
+                    <div>
+                        <label htmlFor='email'>Email </label><br/>
+                        <input type="text" name="email" placeholder='johndoe@gmail.com' onChange={handleInput} /><br/>
+                        {errors.email && <span className="error-message">{errors.email}</span>}
+                    </div>
+                    <div>
+                        <label htmlFor='phone'>Phone Number </label><br/>
+                        <input type="text" name="phone" placeholder='123-456-7890' onChange={handleInput} /><br/>
+                        {errors.phone_number && <span className="error-message">{errors.phone_number}</span>}
+
+                    </div>
+                    <div>
+                        <label htmlFor='password'>Password </label><br/>
+                        <input type="password" name="password" placeholder='Enter your password...' onChange={handleInput} /><br/>
+                        {errors.password && <span className="error-message">{errors.password}</span>}
+                    </div>
+                    <div>
+                        <label htmlFor='address_line'>Address Line </label><br/>
+                        <input type="text" name="address_line" placeholder='123 Pummel St' onChange={handleInput} /><br/>
+                        {errors.address_line && <span className="error-message">{errors.address_line}</span>}
+                    </div>
+                    <div>
+                        <label htmlFor='city'>City </label><br/>
+                        <input type="text" name="city" placeholder='Northridge' onChange={handleInput} /><br/>
+                        {errors.city && <span className="error-message">{errors.city}</span>}
+                    </div>
+                    <div>
+                        <label htmlFor='state'>State </label><br/>
+                        <input type="text" name="state" placeholder='California' onChange={handleInput} /><br/>
+                        {errors.state && <span className="error-message">{errors.state}</span>}
+                    </div>
+                    <div>
+                        <label htmlFor='country'>State </label><br/>
+                        <input type="text" name="country" placeholder='United State' onChange={handleInput} /><br/>
+                        {errors.country && <span className="error-message">{errors.country}</span>}
+                    </div>
+                    <div>
+                        <label htmlFor='zipcode'>Zipcode </label><br/>
+                        <input type="text" name="zipcode" placeholder='12345' onChange={handleInput} /><br/>
+                        {errors.zipcode && <span className="error-message">{errors.zipcode}</span>}
+                    </div>
+                    <button id="signup-btn">SignUp</button>
+                    {registerState && <span className="error-message">{registerState}</span>}
+                </form>
+                <br />
+                <Link to="/Login">Already have an account?</Link>
+            </div>
         </div>
-    </div>
     )
 }
 

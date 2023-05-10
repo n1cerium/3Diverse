@@ -3,7 +3,8 @@ input[type="text"], input[type="password"] {
     outline: none;
     border-bottom: 1px solid black ;
 }
-#register-form {
+.form {
+    background-color: bisque;
     margin-top: 1em;
     border: 1px solid black;
     width: 30em;
@@ -12,6 +13,12 @@ input[type="text"], input[type="password"] {
     row-gap: 0.5em;
 
 }
+#register-body {
+    background-image: url("ghY4rc.webp");
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
 #register-page {
     display: grid;
     justify-content: center;
@@ -19,12 +26,12 @@ input[type="text"], input[type="password"] {
     margin-top: 3%;
 }
 
-#register-form  label{
+.form  label{
     float: left;
     margin-bottom: 0.5em;
     font-size: 15px;
 }
-#register-form > div {
+.form > div {
     margin-left: auto;
     margin-right: auto;
 }

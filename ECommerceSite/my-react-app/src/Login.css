@@ -1,0 +1,25 @@
+#login-body {
+    background-image: url("ghY4rc.webp");
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#login-page {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin-top: 15%;
+}
+
+#login-form {
+    height: 10em;
+    width: 20em;
+}
+
+#login-btn {
+    width: 5em;
+    height: 2em;
+    margin-top: 0em;
+    justify-self: center;
+}
