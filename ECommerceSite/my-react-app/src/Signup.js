@@ -52,6 +52,7 @@ function Signup() {
                     setRegisterState("Phone Number Already Exists");
                 }
                 if(res.data === "Success") {
+                    sessionStorage.setItem("CurrentUser", userData.email);
                     navigate('/Login')
                 }
             }).catch(err => console.log(err));
@@ -67,7 +68,7 @@ function Signup() {
         <div id="register-body">
             <div id="register-page">
                 <h2>Register</h2>
-                <form className="form" action="" onSubmit={handleSubmit}>
+                <form className="form" id="register-form" action="" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor='F_Name'>First Name </label><br/>
                         <input type="text" name="F_Name" placeholder='John' onChange={handleInput} /><br/>
@@ -121,9 +122,9 @@ function Signup() {
                     </div>
                     <button id="signup-btn">SignUp</button>
                     {registerState && <span className="error-message">{registerState}</span>}
+                    <Link id="link-to-acc" to="/Login">Already have an account?</Link>
                 </form>
                 <br />
-                <Link to="/Login">Already have an account?</Link>
             </div>
         </div>
     )

@@ -26,6 +26,7 @@ export default function Login() {
         if(err.email === "" && err.password == "") {
             axios.post('http://localhost:8080/login', userData).then(res => {
                 if(res.data === "Success") {
+                    sessionStorage.setItem("CurrentUser", userData.email);
                     navigate('/');
                 } else {
                     setLoginState("Incorrect email/password");
@@ -51,7 +52,7 @@ export default function Login() {
                         <input type="password" name="password" placeholder='Enter your password...' onChange={handleInput} />
                         {errors.password && <span>{errors.password}</span>}
                     </div>
-                    <button id="login-btn" type="submit">Log In</button>
+                    <button id="login-btn" role=""type="submit">Log In</button>
                 </form>
                 {loginState && <span>{loginState}</span>}
                 <br />

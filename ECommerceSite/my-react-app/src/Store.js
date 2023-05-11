@@ -1,6 +1,7 @@
 import React, { Suspense, useRef, useState } from 'react';
 import './Store.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import Rubiks from "./component/products/Rubiks";
 import Drone from "./component/products/Drone";
@@ -22,6 +23,30 @@ const productInfo = {
 }
 
 export default function Store() {
+    const ItemName = React.useRef([]);
+    const ItemDescription = React.useRef([]);
+    const ItemPrice = React.useRef([]);
+    const [ItemInfo, SetInfo] = React.useState({});
+    
+    const handleClick = (val, e) => {
+        const price = ItemPrice.current[val].innerHTML.slice(2);
+        const infos = {
+            c_User : sessionStorage.getItem("CurrentUser"),
+            i_Name : ItemName.current[val].innerHTML,
+            i_Description : ItemDescription.current[val].innerHTML,
+            i_Price : parseFloat(price)
+        }
+        SetInfo(infos);
+        
+        console.log(infos);
+        axios.post('http://localhost:8080/shop', ItemInfo).then(res => {
+            if(res.data === "Success") {
+                console.log("Successfully added to the cart");
+            } else {
+                console.log("Failed adding item to the cart")
+            }
+        });
+    }
     /* Sidebar */
     const sidebarTypeListRef = useRef(null);
     const sidebarPriceListRef = useRef(null);
@@ -284,9 +309,9 @@ export default function Store() {
                         </div>
                     </div>
 
-                    {/* <div className ="bottom">
+                    <div className ="bottom">
                         <Link to="/ThreeEx"><h3>Three.js Example</h3></Link>
-                    </div> */}
+                    </div>
                 </div>
 
                 <div className="products">
@@ -302,12 +327,12 @@ export default function Store() {
                             </Canvas>
                             <div className="description">
                                 <div className="descriptionCol1">
-                                    <h2>Rubiks Cube</h2>
-                                    <p>The Original 3x3 Cube 3D Puzzle Fidget Cube Stress Relief Fidget Toy Brain. </p>
+                                    <h2 ref = {el => ItemName.current[0] = el}>Rubiks Cube</h2>
+                                    <p  ref = {el => ItemDescription.current[0] = el}>The Original 3x3 Cube 3D Puzzle Fidget Cube Stress Relief Fidget Toy Brain. </p>
                                 </div>
                                 <div className="descriptionCol2">
-                                    <h2> ${productInfo.product1.price} </h2>
-                                    <button> Add to Cart </button>
+                                    <h2 ref={el => ItemPrice.current[0] = el}> ${productInfo.product1.price} </h2>
+                                    <button onClick={() => handleClick(0)}> Add to Cart </button>
                                 </div>
                             </div>
                         </div>
@@ -325,13 +350,13 @@ export default function Store() {
                             </Canvas>
                             <div className="description">
                                 <div className="descriptionCol1">
-                                    <h2>HS Drone</h2>
-                                    <p>GPS Drone with 4K Camera; FPV Quadcopter with Brushless Motor; Smart Return Home.</p>
+                                    <h2 ref = {el => ItemName.current[1] = el}>HS Drone</h2>
+                                    <p ref = {el => ItemDescription.current[1] = el}>GPS Drone with 4K Camera; FPV Quadcopter with Brushless Motor; Smart Return Home.</p>
                                     {/* <p>GPS Drone with 4K EIS UHD 130 FOV Camera for Adults Beginner, FPV Quadcopter with Brushless Motor, 2 Batteries 46 Min Flight Time, 5GHz Transmission, Smart Return Home.</p> */}
                                 </div>
                                 <div className="descriptionCol2">
-                                    <h2> ${productInfo.product2.price} </h2>
-                                    <button> Add to Cart </button>
+                                    <h2 ref={el => ItemPrice.current[1] = el}> ${productInfo.product2.price} </h2>
+                                    <button onClick={() => handleClick(1)}> Add to Cart </button>
                                 </div>
                             </div>
                         </div>
@@ -349,12 +374,12 @@ export default function Store() {
                             </Canvas>
                             <div className="description">
                                 <div className="descriptionCol1">
-                                    <h2>Mug</h2>
-                                    <p>Ceramic-Coated, Dishwasher & Microwave Safe Mug, 12 fl oz.</p>
+                                    <h2 ref = {el => ItemName.current[2] = el}>Mug</h2>
+                                    <p ref = {el => ItemDescription.current[2] = el}>Ceramic-Coated, Dishwasher & Microwave Safe Mug, 12 fl oz.</p>
                                 </div>
                                 <div className="descriptionCol2">
-                                    <h2> ${productInfo.product3.price} </h2>
-                                    <button> Add to Cart </button>
+                                    <h2 ref = {el => ItemPrice.current[2] = el}> ${productInfo.product3.price} </h2>
+                                    <button onClick={() => handleClick(2)}> Add to Cart </button>
                                 </div>
                             </div>
                         </div>
@@ -372,12 +397,12 @@ export default function Store() {
                             </Canvas>
                             <div className="description">
                                 <div className="descriptionCol1">
-                                    <h2>USB Drive</h2>
-                                    <p>64GB High Performance USB 3.2 Metal Flash Drive | Speeds up to 200MB/s.</p>
+                                    <h2 ref = {el => ItemName.current[3] = el}>USB Drive</h2>
+                                    <p ref = {el => ItemDescription.current[3] = el}>64GB High Performance USB 3.2 Metal Flash Drive | Speeds up to 200MB/s.</p>
                                 </div>
                                 <div className="descriptionCol2">
-                                    <h2> ${productInfo.product4.price} </h2>
-                                    <button> Add to Cart </button>
+                                    <h2 ref = {el => ItemPrice.current[3] = el}> ${productInfo.product4.price} </h2>
+                                    <button onClick={() => handleClick(3)}> Add to Cart </button>
                                 </div>
                             </div>
                         </div>
@@ -395,12 +420,12 @@ export default function Store() {
                             </Canvas>
                             <div className="description">
                                 <div className="descriptionCol1">
-                                    <h2>MineCraft Plank</h2>
-                                    <p>MineCraft Plank Light, Battery Powered.</p>
+                                    <h2 ref = {el => ItemName.current[4] = el}>MineCraft Plank</h2>
+                                    <p ref = {el => ItemDescription.current[4] = el}>MineCraft Plank Light, Battery Powered.</p>
                                 </div>
                                 <div className="descriptionCol2">
-                                    <h2> ${productInfo.product5.price} </h2>
-                                    <button> Add to Cart </button>
+                                    <h2 ref = {el => ItemPrice.current[4] = el}> ${productInfo.product5.price} </h2>
+                                    <button onClick={() => handleClick(4)}> Add to Cart </button>
                                 </div>
                             </div>
                         </div>
@@ -418,12 +443,12 @@ export default function Store() {
                             </Canvas>
                             <div className="description">
                                 <div className="descriptionCol1">
-                                    <h2>Keyboard</h2>
-                                    <p>Wireless keyboard that works on various devices. Long-lasting rechargable battery. Splash proof design.</p>
+                                    <h2 ref = {el => ItemName.current[5] = el}>Keyboard</h2>
+                                    <p ref = {el => ItemDescription.current[5] = el}>Wireless keyboard that works on various devices. Long-lasting rechargable battery. Splash proof design.</p>
                                 </div>
                                 <div className="descriptionCol2">
-                                    <h2> ${productInfo.product6.price} </h2>
-                                    <button> Add to Cart </button>
+                                    <h2 ref = {el => ItemPrice.current[5] = el}> ${productInfo.product6.price} </h2>
+                                    <button onClick={() => handleClick(5)}> Add to Cart </button>
                                 </div>
                             </div>
                         </div>
