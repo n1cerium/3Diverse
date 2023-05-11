@@ -13,7 +13,6 @@ import Keyboard from "./component/products/Keyboard";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import './ThreeEx.css';
 
 
 export default function Store() {
