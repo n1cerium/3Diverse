@@ -1,5 +1,5 @@
 
-import React, { Suspense, useRef } from 'react';
+import React, { Suspense, useRef, useState } from 'react';
 import './Store.css';
 import { Link } from 'react-router-dom';
 
@@ -13,8 +13,17 @@ import Keyboard from "./component/products/Keyboard";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 
+const productInfo = {
+    product1 : {type : ["cube", "toy"], price : 13.99},
+    product2 : {type : ["technology"], price : 269.99},
+    product3 : {type : ["kitchenware"], price : 4.99},
+    product4 : {type : ["technology"], price : 7.99},
+    product5 : {type : ["cube", "toy", "technology"], price : 25.99},
+    product6 : {type : ["technology"], price : 18.99}
+}
 
 export default function Store() {
+    /* Sidebar */
     const sidebarTypeListRef = useRef(null);
     const sidebarPriceListRef = useRef(null);
 
@@ -31,6 +40,145 @@ export default function Store() {
             } else {
                 sidebarPriceListRef.current.style.display = "block";
             }
+        }
+    }
+
+    const productItem1Ref = useRef(null);
+    const productItem2Ref = useRef(null);
+    const productItem3Ref = useRef(null);
+    const productItem4Ref = useRef(null);
+    const productItem5Ref = useRef(null);
+    const productItem6Ref = useRef(null);
+
+    const [sidebarType1Checked, setSidebarType1Checked] = useState(false);
+    const [sidebarType2Checked, setSidebarType2Checked] = useState(false);
+    const [sidebarType3Checked, setSidebarType3Checked] = useState(false);
+    const [sidebarType4Checked, setSidebarType4Checked] = useState(false);
+
+    const sidebarTypeCheckbox = (event, val) => {
+        let check = 0;
+        switch(val) {
+            case 1:
+                setSidebarType1Checked(event.target.checked);
+                check = 0;
+                break;
+            case 2:
+                setSidebarType2Checked(event.target.checked);
+                check = 1;
+                break;
+            case 3:
+                setSidebarType3Checked(event.target.checked);
+                check = 2;
+                break;
+            default:
+                setSidebarType4Checked(event.target.checked);
+                check = 3;
+                break;
+        }
+        filterProducts(check);
+    }
+
+    const [sidebarPrice1Checked, setSidebarPrice1Checked] = useState(false);
+    const [sidebarPrice2Checked, setSidebarPrice2Checked] = useState(false);
+    const [sidebarPrice3Checked, setSidebarPrice3Checked] = useState(false);
+    
+    const sidebarPriceCheckbox = (event, val) => {
+        let check = 0;
+        switch(val) {
+            case 1:
+                setSidebarPrice1Checked(event.target.checked);
+                check = 4;
+                break;
+            case 2:
+                setSidebarPrice2Checked(event.target.checked);
+                check = 5;
+                break;
+            default:
+                setSidebarPrice3Checked(event.target.checked);
+                check = 6;
+                break;
+        }
+        filterProducts(check);
+    }
+
+    function filterProducts(check) {
+        let allProducts = {
+            product1 : productItem1Ref,
+            product2 : productItem2Ref,
+            product3 : productItem3Ref,
+            product4 : productItem4Ref,
+            product5 : productItem5Ref,
+            product6 : productItem6Ref
+        };
+
+        for(let product in allProducts) {
+            allProducts[product].current.style.display = "block";
+        }
+
+        let checks = [
+            sidebarType1Checked,
+            sidebarType2Checked,
+            sidebarType3Checked,
+            sidebarType4Checked,
+            sidebarPrice1Checked,
+            sidebarPrice2Checked,
+            sidebarPrice3Checked
+        ];
+        checks[check] = !checks[check];
+
+        let returnNow = true;
+        for(let x in checks) {
+            if(checks[x] == true) {
+                returnNow = false;
+                break;
+            }
+        }
+        if(returnNow) { return; }
+
+        for(let product in productInfo) {
+            /* type */
+            if(checks[0]) {
+                if(!productInfo[product].type.includes("cube")) {
+                    allProducts[product].current.style.display = "none";
+                }
+            }
+            if(checks[1]) {
+                if(!productInfo[product].type.includes("toy")) {
+                    allProducts[product].current.style.display = "none";
+                }
+            }
+            if(checks[2]) {
+                if(!productInfo[product].type.includes("technology")) {
+                    allProducts[product].current.style.display = "none";
+                }
+            }
+            if(checks[3]) {
+                if(!productInfo[product].type.includes("kitchenware")) {
+                    allProducts[product].current.style.display = "none";
+                }
+            }
+
+            /* price */
+            if(checks[4]) {
+                if(productInfo[product].price >= 25) {
+                    allProducts[product].current.style.display = "none";
+                }
+            }
+            if(checks[5]) {
+                if((productInfo[product].price < 25) || (productInfo[product].price >= 50)) {
+                    allProducts[product].current.style.display = "none";
+                }
+            }
+            if(checks[6]) {
+                if(productInfo[product].price < 50) {
+                    allProducts[product].current.style.display = "none";
+                }
+            }
+        }
+
+        console.log("HERE << ");
+        for(let product in allProducts) {
+            console.log(allProducts[product].current.style.display);
         }
     }
 
@@ -57,20 +205,44 @@ export default function Store() {
                             <h3 id="sidebarTypeBtn" onClick={() => sidebarOptionClick("type")}>Type</h3>
                             <ul ref={sidebarTypeListRef}>
                                 <li>
-                                    <input type="checkbox" id="item1" name="item1" value="Clothes"/>
-                                    <label for="item1"> Clothes</label>
+                                    <input
+                                        type="checkbox"
+                                        id="sidebarType1"
+                                        name="sidebarType1"
+                                        checked={sidebarType1Checked}
+                                        onChange={(event) => sidebarTypeCheckbox(event, 1)}
+                                        value="Cube"/>
+                                    <label for="sidebarType1"> Cube</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" id="item2" name="item2" value="Food"/>
-                                    <label for="item2"> Food</label>
+                                    <input
+                                        type="checkbox"
+                                        id="sidebarType2"
+                                        name="sidebarType2"
+                                        checked={sidebarType2Checked}
+                                        onChange={(event) => sidebarTypeCheckbox(event, 2)}
+                                        value="Toy"/>
+                                    <label for="sidebarType2"> Toy</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" id="item3" name="item3" value="Toys" />
-                                    <label for="item3"> Toys</label>
+                                    <input
+                                        type="checkbox"
+                                        id="sidebarType3"
+                                        name="sidebarType3"
+                                        checked={sidebarType3Checked}
+                                        onChange={(event) => sidebarTypeCheckbox(event, 3)}
+                                        value="Technology" />
+                                    <label for="sidebarType3"> Technology</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" id="item4" name="item4" value="Anime"/>
-                                    <label for="item4"> Anime</label>
+                                    <input
+                                        type="checkbox"
+                                        id="sidebarType4"
+                                        name="sidebarType4"
+                                        checked={sidebarType4Checked}
+                                        onChange={(event) => sidebarTypeCheckbox(event, 4)}
+                                        value="Kitchenware"/>
+                                    <label for="sidebarType4"> Kitchenware</label>
                                 </li>
                             </ul>
                         </div>
@@ -79,16 +251,34 @@ export default function Store() {
                             <h3 id="sidebarPriceBtn" onClick={() => sidebarOptionClick("price")}>Price</h3>
                             <ul ref={sidebarPriceListRef}>
                                 <li>
-                                    <input type="checkbox" id="item5" name="item5" value="<$25" />
-                                    <label for="item5"> Under $25 </label>
+                                    <input
+                                        type="checkbox"
+                                        id="sidebarPrice1"
+                                        name="sidebarPrice1"
+                                        checked={sidebarPrice1Checked}
+                                        onChange={(event) => sidebarPriceCheckbox(event, 1)}
+                                        value="<$25" />
+                                    <label for="sidebarPrice1"> Under $25 </label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" id="item6" name="item6" value="$25-$50" />
-                                    <label for="item6"> $25 to $50 </label>
+                                    <input
+                                        type="checkbox"
+                                        id="sidebarPrice2"
+                                        name="sidebarPrice2"
+                                        checked={sidebarPrice2Checked}
+                                        onChange={(event) => sidebarPriceCheckbox(event, 2)}
+                                        value="$25-$50" />
+                                    <label for="sidebarPrice2"> $25 to $50 </label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" id="item7" name="item7" value=">$100" />
-                                    <label for="item7"> $50 Above </label>
+                                    <input
+                                        type="checkbox"
+                                        id="sidebarPrice3"
+                                        name="sidebarPrice3"
+                                        checked={sidebarPrice3Checked}
+                                        onChange={(event) => sidebarPriceCheckbox(event, 3)}
+                                        value=">$100" />
+                                    <label for="sidebarPrice3"> $50 Above </label>
                                 </li>
                             </ul>
                         </div>
@@ -99,7 +289,7 @@ export default function Store() {
                     </div>
 
                     <div className="products">
-                        <div className="productItem1">
+                        <div className="productItem1" ref={productItem1Ref}>
                             <div className="card">
                                 <Canvas className="canvas">
                                     <OrbitControls enableZoom={false} />
@@ -115,14 +305,14 @@ export default function Store() {
                                         <p>The Original 3x3 Cube 3D Puzzle Fidget Cube Stress Relief Fidget Toy Brain. </p>
                                     </div>
                                     <div className="descriptionCol2">
-                                        <h2> $13.99 </h2>
+                                        <h2> ${productInfo.product1.price} </h2>
                                         <button> Add to Cart </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                                 
-                        <div className="productItem2">
+                        <div className="productItem2" ref={productItem2Ref}>
                             <div className="card">
                                 <Canvas className="canvas">
                                     <OrbitControls enableZoom={false} />
@@ -139,14 +329,14 @@ export default function Store() {
                                         {/* <p>GPS Drone with 4K EIS UHD 130 FOV Camera for Adults Beginner, FPV Quadcopter with Brushless Motor, 2 Batteries 46 Min Flight Time, 5GHz Transmission, Smart Return Home.</p> */}
                                     </div>
                                     <div className="descriptionCol2">
-                                        <h2> $269.99 </h2>
+                                        <h2> ${productInfo.product2.price} </h2>
                                         <button> Add to Cart </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="productItem3">
+                        <div className="productItem3" ref={productItem3Ref}>
                             <div className="card">
                                 <Canvas className="canvas">
                                     <OrbitControls enableZoom={false} />
@@ -162,14 +352,14 @@ export default function Store() {
                                         <p>Ceramic-Coated, Dishwasher & Microwave Safe Mug, 12 fl oz.</p>
                                     </div>
                                     <div className="descriptionCol2">
-                                        <h2> $4.99 </h2>
+                                        <h2> ${productInfo.product3.price} </h2>
                                         <button> Add to Cart </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="productItem4">
+                        <div className="productItem4" ref={productItem4Ref}>
                             <div className="card">
                                 <Canvas className="canvas">
                                     <OrbitControls enableZoom={false} />
@@ -185,14 +375,14 @@ export default function Store() {
                                         <p>64GB High Performance USB 3.2 Metal Flash Drive | Speeds up to 200MB/s.</p>
                                     </div>
                                     <div className="descriptionCol2">
-                                        <h2> $7.99 </h2>
+                                        <h2> ${productInfo.product4.price} </h2>
                                         <button> Add to Cart </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="productItem5">
+                        <div className="productItem5" ref={productItem5Ref}>
                             <div className="card">
                                 <Canvas className="canvas">
                                     <OrbitControls enableZoom={false} />
@@ -208,14 +398,14 @@ export default function Store() {
                                         <p>MineCraft Plank Light, Battery Powered.</p>
                                     </div>
                                     <div className="descriptionCol2">
-                                        <h2> $25.99 </h2>
+                                        <h2> ${productInfo.product5.price} </h2>
                                         <button> Add to Cart </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="productItem6">
+                        <div className="productItem6" ref={productItem6Ref}>
                             <div className="card">
                                 <Canvas className="canvas">
                                     <OrbitControls enableZoom={false} />
@@ -231,7 +421,7 @@ export default function Store() {
                                         <p>Wireless keyboard that works on various devices. Long-lasting rechargable battery. Splash proof design.</p>
                                     </div>
                                     <div className="descriptionCol2">
-                                        <h2> $18.99 </h2>
+                                        <h2> ${productInfo.product6.price} </h2>
                                         <button> Add to Cart </button>
                                     </div>
                                 </div>
