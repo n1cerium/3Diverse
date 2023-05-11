@@ -15,7 +15,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <Link to="/Store" className="button-cool link-no-underline" role="button">
+            <Link to="/" className="button-cool link-no-underline" role="button">
                 Start shopping
             </Link>
         </div>
