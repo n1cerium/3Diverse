@@ -6,13 +6,20 @@ const app = express();
 app.use(cors());
 app.use(express.json())
 
+// const db = mysql.createConnection( {
+//     host: "localhost",
+//     user: "root",
+//     password: "root",
+//     database: "ecommerce"
+// })
+
 const db = mysql.createConnection( {
-    host: "localhost",
-    user: "root",
-    password: "root",
+    connectionLimit: 10,
+    host: "database-1.cha9each1rtw.us-east-2.rds.amazonaws.com",
+    user: "admin",
+    password: "adminroot",
     database: "ecommerce"
 })
-
 app.post('/signup', (req, res) => {
     const checkEmail = "SELECT `email` FROM users WHERE `email` = ?";
     db.query(checkEmail, [req.body.email], (err, data) => {
