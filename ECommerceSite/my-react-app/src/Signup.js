@@ -121,9 +121,9 @@ function Signup() {
                     </div>
                     <button id="signup-btn">SignUp</button>
                     {registerState && <span className="error-message">{registerState}</span>}
+                    <Link id="link-to-acc" to="/Login">Already have an account?</Link>
                 </form>
                 <br />
-                <Link to="/Login">Already have an account?</Link>
             </div>
         </div>
     )

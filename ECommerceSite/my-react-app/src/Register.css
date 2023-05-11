@@ -1,8 +1,9 @@
 input[type="text"], input[type="password"] {
     border: none;
     outline: none;
+    font-size: 1em;
     border-bottom: 1px solid black ;
-    height: 0.5em;
+    
 }
 .form {
     background-color: bisque;
@@ -17,7 +18,7 @@ input[type="text"], input[type="password"] {
 #register-body {
     background-image: url("ghY4rc.webp");
     position: absolute;
-    height: 100vh;
+    height: 160vh;
     width: 100%;
 }
 #register-page {
@@ -26,24 +27,40 @@ input[type="text"], input[type="password"] {
     align-content: center;
     margin-top: 3%;
 }
-
+#register-page > h2 {
+    font-size: 3em;
+}
+#register-form {
+    width: 40em;
+}
 .form label{
     float: left;
-    margin-bottom: 0;
-    font-size: 15px;
+    font-size: 1.5em;
 }
-
+#register-form div:nth-child(1) {
+    margin-top: 1em;
+}
 .form > div {
     margin-left: auto;
     margin-right: auto;
 }
 #signup-btn {
     width: 5em;
+    height: 2em;
     margin-top: 0.5em;
     justify-self: center;
+    font-size: larger;
+}
+#link-to-acc {
+    padding-top: 1em;
+    font-size: 1.3em;
+    color: black;
+}
+#link-to-acc:hover {
+    color: green;
 }
 .error-message {
     color:red;
-    font-size:10px;
+    font-size:1em;
     float: left;
 }
