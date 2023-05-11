@@ -31,6 +31,7 @@ html {
     text-decoration: none;
   }
   
+  
 
   /* Grey box*/
   html {
@@ -41,23 +42,30 @@ html {
     background-color: #333333;
     font-family: 'Rubik', sans-serif;
   }
+
   /* Inside text box */
-  
   .quote-container {
     background-color: rgba(250, 255, 255, 0.293);
-    border-radius: 20;
-    padding: 4rem;
+    border-radius: 50;
+    padding: 60rem;
     color: #ffffff ;
-    font-size: 5rem;
-    margin-top: 55px;
+    font-size: 50rem;
+    margin-top: 5px;
+    width: 100px; /* Adjust the value as per your desired width */
+    height: 60px; /* Adjust the value as per your desired height */
+    display: flex;
+    justify-content: center; /* Change to flex-end */
+    align-items: center;
+    text-align: right;
+    height: 15vh; /* Added style */
   }
   
   .text-container,
   .credits {
-    text-align: center;
+    width: 63%; /*moving the text to left/right position*/
   }
 
-    /* Buttons*/
+/*Button for Store Page*/
 .button-cool,
 .button-cool:after {
     
@@ -74,6 +82,7 @@ html {
   outline: transparent;
   position: relative;
   top: -100px; /*button position*/
+
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
