@@ -39,7 +39,6 @@ body {
 .navbarMenu {
     display: flex;
     height: 100%;
-    margin-right: 14px;
     float: right;
     align-items: center;
 }
