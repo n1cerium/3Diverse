@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
     background-color: #202020;
 }
 
@@ -12,25 +12,26 @@ body {
 .header {
     display: flex;
     width: 100%;
-    height: 83px;
+    height: 68px;
     align-items: center;
     background-color: #202020;
-    border-bottom: 3px solid #323232;
+    border-bottom: 0;
 }
 
 .header .logo {
-    flex: 0 0 50%;
+    flex: 0 0 100%;
     padding-left: 20px;
     margin-right: auto;
 }
 
 .header .logo h1 {
-    text-align: left;
-    font-size: 3em;
+    text-align: center;
+    font-size: 3.5em;
     color: white;
 }
 
 .navbar {
+    display: none;
     flex: 0 0 50%;
     height: 100%;
     align-items: center;
@@ -54,13 +55,35 @@ body {
 }
 
 .navbarMenu a:hover {
-    background-color: #A164BA80;
-    font-size: 1.5em;
+    /* background-color: #A164BA80; */
+    background-color: #3C3C3C;
+    /* font-size: 1.5em; */
 }
 
 .navbarMenu h3 {
     width: 100%;
     text-align: center;
+}
+
+/*** MOBILE NAV BAR ***/
+.mobileNavbar {
+    display: block;
+    border-bottom: 3px solid #323232;
+}
+
+.mobileNavbar a {
+    width: 100px;
+    text-decoration: none;
+    font-size: 1.25em;
+    color: white;
+}
+
+.mobileNavbar h3 {
+    padding: 6px 0;
+}
+
+.mobileNavbar h3:hover {
+    background-color: #3C3C3C;
 }
 
 /*** MAIN BODY ***/
@@ -74,7 +97,7 @@ body {
 
 /** sidebar **/
 .sidebar {
-    padding: 40px;
+    padding: 15px 30px;
     /* background-color: #6B556B; */
     text-align: left;
     color: #FDFDFD;
@@ -109,12 +132,23 @@ body {
 }
 
 .sidebar h2 {
-    padding-bottom: 8px;
+    padding-bottom: 4px;
     font-size: 2em;
+    text-align: center;
+}
+
+.sidebarMenuContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarMenu {
+    flex: 0 0 100%;
+    text-align: center;
 }
 
 .sidebarMenu h3 {
-    padding-top: 16px;
+    padding-top: 8px;
     padding-bottom: 4px;
     font-size: 1.5em;
 }
@@ -126,8 +160,11 @@ body {
 
 .sidebarMenu ul {
     display: none;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0;
     list-style: none;
-    padding-left: 24px;
+    text-align: left;
 }
 
 .sidebarMenu li {
@@ -137,7 +174,7 @@ body {
 /** products **/
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: auto;
     row-gap: 30px;
     padding-top: 30px;
@@ -178,7 +215,7 @@ body {
 
 .card {
     transition: 0.3s;
-    width: 420px;
+    width: 300px;
     height: 320px;
     border-radius: 5px;
     position: relative;
@@ -230,11 +267,11 @@ body {
 }
 
 .description button {
-    padding: 0px 10px;
+    padding: 4px 10px;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
-    line-height: 30px;
+    line-height: 16px;
     margin: auto;
     font-size: 1em;
     font-weight: bold;
@@ -288,6 +325,78 @@ body {
     font-weight: bold;
 }
 
+/* Mobile size */
+@media only screen and (min-width: 500px) {
+    body {
+        font-size: 16px;
+    }
+
+    .header {
+        height: 83px;
+        border-bottom: 3px solid #323232;
+    }
+
+    .header .logo {
+        flex: 0 0 50%;
+    }
+
+    .header .logo h1 {
+        text-align: left;
+        font-size: 3em;
+    }
+
+    .navbar {
+        display: block;
+    }
+
+    .mobileNavbar {
+        display: none;
+    }
+
+    .sidebar {
+        padding: 20px 40px;
+    }
+
+    .sidebar h2 {
+        padding-bottom: 8px;
+        text-align: left;
+    }
+
+    .sidebarMenuContainer {
+        flex-direction: row;
+    }
+
+    .sidebarMenu {
+        flex: 0 0 50%;
+        text-align: left;
+    }
+
+    .sidebarMenu h3 {
+        padding-top: 16px;
+    }
+
+    .sidebarMenu ul {
+        width: 100%;
+        margin: 0;
+        padding-left: 24px;
+        text-align: left;
+    }
+
+    .products {
+        grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    }
+
+    .card {
+        width: 420px;
+    }
+
+    .description button {
+        padding: 0px 10px;
+        line-height: 30px;
+    }
+}
+
+/* Desktop and Table sizes */
 @media only screen and (min-width: 790px) {
     .navbarMenu a {
         width: 180px;
@@ -295,12 +404,24 @@ body {
         color: white;
     }
     
-    .navbarMenu a:hover {
+    /* .navbarMenu a:hover {
         font-size: 2em;
-    }
+    } */
 
     .mainBody {
         grid-template-columns: 250px auto;
         grid-template-rows: none;
+    }
+
+    .sidebar {
+        padding: 40px;
+    }
+
+    .sidebarMenuContainer {
+        flex-direction: column;
+    }
+    
+    .sidebarMenu {
+        flex: 0 0 100%;
     }
 }

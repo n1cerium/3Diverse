@@ -1,4 +1,3 @@
-
 import React, { Suspense, useRef, useState } from 'react';
 import './Store.css';
 import { Link } from 'react-router-dom';
@@ -175,32 +174,33 @@ export default function Store() {
                 }
             }
         }
-
-        console.log("HERE << ");
-        for(let product in allProducts) {
-            console.log(allProducts[product].current.style.display);
-        }
     }
 
     return (
     <>
-            <div className="body">
-                <div className="header">
-                    <div className="logo">
-                        <h1>3Diverse</h1>
-                    </div>
-                    <div className="navbar">
-                        <div className="navbarMenu">
-                            <Link to="/Login"><h3>Login</h3></Link>
-                            <Link to="/Cart"><h3>Cart</h3></Link>
-                        </div>
+        <div className="body">
+            <div className="header">
+                <div className="logo">
+                    <h1>3Diverse</h1>
+                </div>
+                <div className="navbar">
+                    <div className="navbarMenu">
+                        <Link to="/Login"><h3>Login</h3></Link>
+                        <Link to="/Cart"><h3>Cart</h3></Link>
                     </div>
                 </div>
-                
-                <div className="mainBody">
-                    <div className="sidebar">
-                        <h2>Filters</h2>
+            </div>
 
+            <div className="mobileNavbar">
+                <Link to="/Login"><h3>Login</h3></Link>
+                <Link to="/Cart"><h3>Cart</h3></Link>
+            </div>
+            
+            <div className="mainBody">
+                <div className="sidebar">
+                    <h2>Filters</h2>
+
+                    <div className="sidebarMenuContainer">
                         <div className="sidebarMenu">
                             <h3 id="sidebarTypeBtn" onClick={() => sidebarOptionClick("type")}>Type</h3>
                             <ul ref={sidebarTypeListRef}>
@@ -282,163 +282,164 @@ export default function Store() {
                                 </li>
                             </ul>
                         </div>
-
-                        {/* <div className ="bottom">
-                            <Link to="/ThreeEx"><h3>Three.js Example</h3></Link>
-                        </div> */}
                     </div>
 
-                    <div className="products">
-                        <div className="productItem1" ref={productItem1Ref}>
-                            <div className="card">
-                                <Canvas className="canvas">
-                                    <OrbitControls enableZoom={false} />
-                                    <ambientLight intensity={0.5} />
-                                    <directionalLight position={[-2, 5, 2]} intensity={1} />
-                                    <Suspense fallback={null}>
-                                        <Rubiks />
-                                    </Suspense>
-                                </Canvas>
-                                <div className="description">
-                                    <div className="descriptionCol1">
-                                        <h2>Rubiks Cube</h2>
-                                        <p>The Original 3x3 Cube 3D Puzzle Fidget Cube Stress Relief Fidget Toy Brain. </p>
-                                    </div>
-                                    <div className="descriptionCol2">
-                                        <h2> ${productInfo.product1.price} </h2>
-                                        <button> Add to Cart </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                                
-                        <div className="productItem2" ref={productItem2Ref}>
-                            <div className="card">
-                                <Canvas className="canvas">
-                                    <OrbitControls enableZoom={false} />
-                                    <ambientLight intensity={0.5} />
-                                    <directionalLight position={[-2, 5, 2]} intensity={1} />
-                                    <Suspense fallback={null}>
-                                        <Drone />
-                                    </Suspense>
-                                </Canvas>
-                                <div className="description">
-                                    <div className="descriptionCol1">
-                                        <h2>HS Drone</h2>
-                                        <p>GPS Drone with 4K Camera; FPV Quadcopter with Brushless Motor; Smart Return Home.</p>
-                                        {/* <p>GPS Drone with 4K EIS UHD 130 FOV Camera for Adults Beginner, FPV Quadcopter with Brushless Motor, 2 Batteries 46 Min Flight Time, 5GHz Transmission, Smart Return Home.</p> */}
-                                    </div>
-                                    <div className="descriptionCol2">
-                                        <h2> ${productInfo.product2.price} </h2>
-                                        <button> Add to Cart </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="productItem3" ref={productItem3Ref}>
-                            <div className="card">
-                                <Canvas className="canvas">
-                                    <OrbitControls enableZoom={false} />
-                                    <ambientLight intensity={0.5} />
-                                    <directionalLight position={[-2, 5, 2]} intensity={1} />
-                                    <Suspense fallback={null}>
-                                        <Mug />
-                                    </Suspense>
-                                </Canvas>
-                                <div className="description">
-                                    <div className="descriptionCol1">
-                                        <h2>Mug</h2>
-                                        <p>Ceramic-Coated, Dishwasher & Microwave Safe Mug, 12 fl oz.</p>
-                                    </div>
-                                    <div className="descriptionCol2">
-                                        <h2> ${productInfo.product3.price} </h2>
-                                        <button> Add to Cart </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="productItem4" ref={productItem4Ref}>
-                            <div className="card">
-                                <Canvas className="canvas">
-                                    <OrbitControls enableZoom={false} />
-                                    <ambientLight intensity={0.5} />
-                                    <directionalLight position={[-2, 5, 2]} intensity={1} />
-                                    <Suspense fallback={null}>
-                                        <USBDrive />
-                                    </Suspense>
-                                </Canvas>
-                                <div className="description">
-                                    <div className="descriptionCol1">
-                                        <h2>USB Drive</h2>
-                                        <p>64GB High Performance USB 3.2 Metal Flash Drive | Speeds up to 200MB/s.</p>
-                                    </div>
-                                    <div className="descriptionCol2">
-                                        <h2> ${productInfo.product4.price} </h2>
-                                        <button> Add to Cart </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="productItem5" ref={productItem5Ref}>
-                            <div className="card">
-                                <Canvas className="canvas">
-                                    <OrbitControls enableZoom={false} />
-                                    <ambientLight intensity={0.5} />
-                                    <directionalLight position={[-2, 5, 2]} intensity={1} />
-                                    <Suspense fallback={null}>
-                                        <MCPlank />
-                                    </Suspense>
-                                </Canvas>
-                                <div className="description">
-                                    <div className="descriptionCol1">
-                                        <h2>MineCraft Plank</h2>
-                                        <p>MineCraft Plank Light, Battery Powered.</p>
-                                    </div>
-                                    <div className="descriptionCol2">
-                                        <h2> ${productInfo.product5.price} </h2>
-                                        <button> Add to Cart </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="productItem6" ref={productItem6Ref}>
-                            <div className="card">
-                                <Canvas className="canvas">
-                                    <OrbitControls enableZoom={false} />
-                                    <ambientLight intensity={0.5} />
-                                    <directionalLight position={[-2, 5, 2]} intensity={1} />
-                                    <Suspense fallback={null}>
-                                        <Keyboard />
-                                    </Suspense>
-                                </Canvas>
-                                <div className="description">
-                                    <div className="descriptionCol1">
-                                        <h2>Keyboard</h2>
-                                        <p>Wireless keyboard that works on various devices. Long-lasting rechargable battery. Splash proof design.</p>
-                                    </div>
-                                    <div className="descriptionCol2">
-                                        <h2> ${productInfo.product6.price} </h2>
-                                        <button> Add to Cart </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {/* <div className ="bottom">
+                        <Link to="/ThreeEx"><h3>Three.js Example</h3></Link>
+                    </div> */}
                 </div>
 
-                <div className="footer">
-                    <div className="logo">
-                        <h1>3Diverse</h1>
+                <div className="products">
+                    <div className="productItem1" ref={productItem1Ref}>
+                        <div className="card">
+                            <Canvas className="canvas">
+                                <OrbitControls enableZoom={false} />
+                                <ambientLight intensity={0.5} />
+                                <directionalLight position={[-2, 5, 2]} intensity={1} />
+                                <Suspense fallback={null}>
+                                    <Rubiks />
+                                </Suspense>
+                            </Canvas>
+                            <div className="description">
+                                <div className="descriptionCol1">
+                                    <h2>Rubiks Cube</h2>
+                                    <p>The Original 3x3 Cube 3D Puzzle Fidget Cube Stress Relief Fidget Toy Brain. </p>
+                                </div>
+                                <div className="descriptionCol2">
+                                    <h2> ${productInfo.product1.price} </h2>
+                                    <button> Add to Cart </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <p>Contact us at: <a href="#" target="_blank">support@3Diverse.com</a></p>
-                    <p><a href="#" target="_blank">Subscribe to our newsletter</a></p>
-                    <p className="copyright">© 2023 3Diverse </p>
+                            
+                    <div className="productItem2" ref={productItem2Ref}>
+                        <div className="card">
+                            <Canvas className="canvas">
+                                <OrbitControls enableZoom={false} />
+                                <ambientLight intensity={0.5} />
+                                <directionalLight position={[-2, 5, 2]} intensity={1} />
+                                <Suspense fallback={null}>
+                                    <Drone />
+                                </Suspense>
+                            </Canvas>
+                            <div className="description">
+                                <div className="descriptionCol1">
+                                    <h2>HS Drone</h2>
+                                    <p>GPS Drone with 4K Camera; FPV Quadcopter with Brushless Motor; Smart Return Home.</p>
+                                    {/* <p>GPS Drone with 4K EIS UHD 130 FOV Camera for Adults Beginner, FPV Quadcopter with Brushless Motor, 2 Batteries 46 Min Flight Time, 5GHz Transmission, Smart Return Home.</p> */}
+                                </div>
+                                <div className="descriptionCol2">
+                                    <h2> ${productInfo.product2.price} </h2>
+                                    <button> Add to Cart </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="productItem3" ref={productItem3Ref}>
+                        <div className="card">
+                            <Canvas className="canvas">
+                                <OrbitControls enableZoom={false} />
+                                <ambientLight intensity={0.5} />
+                                <directionalLight position={[-2, 5, 2]} intensity={1} />
+                                <Suspense fallback={null}>
+                                    <Mug />
+                                </Suspense>
+                            </Canvas>
+                            <div className="description">
+                                <div className="descriptionCol1">
+                                    <h2>Mug</h2>
+                                    <p>Ceramic-Coated, Dishwasher & Microwave Safe Mug, 12 fl oz.</p>
+                                </div>
+                                <div className="descriptionCol2">
+                                    <h2> ${productInfo.product3.price} </h2>
+                                    <button> Add to Cart </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="productItem4" ref={productItem4Ref}>
+                        <div className="card">
+                            <Canvas className="canvas">
+                                <OrbitControls enableZoom={false} />
+                                <ambientLight intensity={0.5} />
+                                <directionalLight position={[-2, 5, 2]} intensity={1} />
+                                <Suspense fallback={null}>
+                                    <USBDrive />
+                                </Suspense>
+                            </Canvas>
+                            <div className="description">
+                                <div className="descriptionCol1">
+                                    <h2>USB Drive</h2>
+                                    <p>64GB High Performance USB 3.2 Metal Flash Drive | Speeds up to 200MB/s.</p>
+                                </div>
+                                <div className="descriptionCol2">
+                                    <h2> ${productInfo.product4.price} </h2>
+                                    <button> Add to Cart </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="productItem5" ref={productItem5Ref}>
+                        <div className="card">
+                            <Canvas className="canvas">
+                                <OrbitControls enableZoom={false} />
+                                <ambientLight intensity={0.5} />
+                                <directionalLight position={[-2, 5, 2]} intensity={1} />
+                                <Suspense fallback={null}>
+                                    <MCPlank />
+                                </Suspense>
+                            </Canvas>
+                            <div className="description">
+                                <div className="descriptionCol1">
+                                    <h2>MineCraft Plank</h2>
+                                    <p>MineCraft Plank Light, Battery Powered.</p>
+                                </div>
+                                <div className="descriptionCol2">
+                                    <h2> ${productInfo.product5.price} </h2>
+                                    <button> Add to Cart </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="productItem6" ref={productItem6Ref}>
+                        <div className="card">
+                            <Canvas className="canvas">
+                                <OrbitControls enableZoom={false} />
+                                <ambientLight intensity={0.5} />
+                                <directionalLight position={[-2, 5, 2]} intensity={1} />
+                                <Suspense fallback={null}>
+                                    <Keyboard />
+                                </Suspense>
+                            </Canvas>
+                            <div className="description">
+                                <div className="descriptionCol1">
+                                    <h2>Keyboard</h2>
+                                    <p>Wireless keyboard that works on various devices. Long-lasting rechargable battery. Splash proof design.</p>
+                                </div>
+                                <div className="descriptionCol2">
+                                    <h2> ${productInfo.product6.price} </h2>
+                                    <button> Add to Cart </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <div className="footer">
+                <div className="logo">
+                    <h1>3Diverse</h1>
+                </div>
+                <p>Contact us at: <a href="#" target="_blank">support@3Diverse.com</a></p>
+                <p><a href="#" target="_blank">Subscribe to our newsletter</a></p>
+                <p className="copyright">© 2023 3Diverse </p>
+            </div>
+        </div>
     </>
   );
 }
