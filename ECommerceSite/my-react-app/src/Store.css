@@ -188,15 +188,12 @@ body {
     cursor: grab;
 }
 
-.card:hover .description {
+.card:hover:active .description {
+    cursor: grabbing;
     visibility: hidden;
     opacity: 0;
     -webkit-transition: visibility 0.15s, opacity 0.15s linear;
     transition: visibility 0.15s, opacity 0.15s linear;
-}
-
-.card:hover:active {
-    cursor: grabbing;
 }
 
 .description {
