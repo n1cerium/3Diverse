@@ -51,7 +51,7 @@ export default function Login() {
                         <input type="password" name="password" placeholder='Enter your password...' onChange={handleInput} />
                         {errors.password && <span>{errors.password}</span>}
                     </div>
-                    <button id="login-btn" type="submit">Log In</button>
+                    <button id="login-btn" role=""type="submit">Log In</button>
                 </form>
                 {loginState && <span>{loginState}</span>}
                 <br />

@@ -2,6 +2,7 @@ input[type="text"], input[type="password"] {
     border: none;
     outline: none;
     border-bottom: 1px solid black ;
+    height: 0.5em;
 }
 .form {
     background-color: bisque;
@@ -16,7 +17,7 @@ input[type="text"], input[type="password"] {
 #register-body {
     background-image: url("ghY4rc.webp");
     position: absolute;
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 #register-page {
@@ -26,11 +27,12 @@ input[type="text"], input[type="password"] {
     margin-top: 3%;
 }
 
-.form  label{
+.form label{
     float: left;
-    margin-bottom: 0.5em;
+    margin-bottom: 0;
     font-size: 15px;
 }
+
 .form > div {
     margin-left: auto;
     margin-right: auto;

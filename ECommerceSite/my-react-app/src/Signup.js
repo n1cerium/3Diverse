@@ -67,7 +67,7 @@ function Signup() {
         <div id="register-body">
             <div id="register-page">
                 <h2>Register</h2>
-                <form className="form" action="" onSubmit={handleSubmit}>
+                <form className="form" id="register-form" action="" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor='F_Name'>First Name </label><br/>
                         <input type="text" name="F_Name" placeholder='John' onChange={handleInput} /><br/>

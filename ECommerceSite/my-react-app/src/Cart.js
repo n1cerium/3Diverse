@@ -1,8 +1,15 @@
     import * as React from 'react';
     import { Link } from 'react-router-dom';
     import './Cart.css';
+    import axios from 'axios';
+
 
     export default function Cart({ cartItems }) {
+        axios.post('http://localhost:8080/cart').then(res => {
+            console.log(res.data);
+        });
+
+
     return (
         <div className="cart-container">
         <h1 className="cart-title">Shopping Cart</h1>
