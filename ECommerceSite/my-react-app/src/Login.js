@@ -26,6 +26,7 @@ export default function Login() {
         if(err.email === "" && err.password == "") {
             axios.post('http://localhost:8080/login', userData).then(res => {
                 if(res.data === "Success") {
+                    sessionStorage.setItem("CurrentUser", userData.email);
                     navigate('/');
                 } else {
                     setLoginState("Incorrect email/password");

@@ -26,13 +26,14 @@ export default function Store() {
     const handleClick = (val, e) => {
         const price = ItemPrice.current[val].innerHTML.slice(1);
         const infos = {
+            c_User : sessionStorage.getItem("CurrentUser"),
             i_Name : ItemName.current[val].innerHTML,
             i_Description : ItemDescription.current[val].innerHTML,
             i_Price : parseFloat(price)
         }
         SetInfo(infos);
         
-        
+        console.log(infos);
         axios.post('http://localhost:8080/shop', ItemInfo).then(res => {
             if(res.data === "Success") {
                 console.log("Successfully added to the cart");

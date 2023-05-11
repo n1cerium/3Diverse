@@ -74,9 +74,10 @@ app.post('/login', (req, res) => {
     })
 })
 app.post('/shop', (req, res) => {
-        const sql = "INSERT INTO item(`Name`, `Description`, `Price`)" + 
-                                "VALUES (?, ?, ?)";
+        const sql = "INSERT INTO item(`User`, `Name`, `Description`, `Price`)" + 
+                                "VALUES (?, ?, ?, ?)";
         const values = [
+            req.body.c_User,
             req.body.i_Name,
             req.body.i_Description,
             req.body.i_Price
@@ -91,9 +92,19 @@ app.post('/shop', (req, res) => {
 })
 
 app.post('/cart', (req, res) => {
-    const sql = "Select `Name`, `Price` FROM item";
+    const sql = "Select `Item ID`, `Name`, `Price` FROM item";
     db.query(sql, (err, data) => {
         return res.json(data);
+    })
+})
+app.post('/CartRemove', (req, res) => {
+    const sql = "DELETE FROM `item`";
+    db.query(sql, (err, data) => {
+        if(err) {
+            return res.json("Error");
+        } else {
+            return res.json(data);
+        }
     })
 })
 app.listen(8080, ()=>{

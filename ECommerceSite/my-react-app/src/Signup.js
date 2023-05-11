@@ -52,6 +52,7 @@ function Signup() {
                     setRegisterState("Phone Number Already Exists");
                 }
                 if(res.data === "Success") {
+                    sessionStorage.setItem("CurrentUser", userData.email);
                     navigate('/Login')
                 }
             }).catch(err => console.log(err));

@@ -1,42 +1,118 @@
-    .cart-container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-    
-    .cart-title {
-        font-size: 32px;
-        margin-bottom: 20px;
-    }
-    
-    .empty-cart-message {
-        font-size: 24px;
-        color: #999;
-    }
-    
-    .cart-items-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .cart-item {
-        margin-bottom: 10px;
-    }
-    
-    .cart-item-name {
-        font-weight: bold;
-    }
-    
-    .cart-item-price {
-        font-weight: bold;
-        color: #999;
-    }
-    
-    .continue-shopping-link {
-        display: block;
-        margin-top: 20px;
-        color: #0077cc;
-        text-decoration: none;
-    }
-    
+ #cart-container {
+     display: flex;
+     flex-direction: column;
+     max-width: 800px;
+     margin: 0 auto;
+     padding: 20px;
+ }
+ #col-1 {
+     align-self: center;
+ }
+ #col-2 {
+    display: flex;
+    gap: 50%;
+    margin-left: -20em;
+ }
+ #col-2-1 {
+    border: 1px solid black;
+    height: 50em;
+
+ }
+ #col-2-2 {
+    border: 1px solid black;
+    margin-top: auto;
+    margin-bottom: auto ;
+    height: 42em;
+    margin-left: -10em;
+ }
+ #card-info {
+    width: 35em;
+ }
+ #cart-title {
+     font-size: 32px;
+     margin-bottom: 20px;
+ }
+ 
+ .empty-cart-message {
+    font-size: 24px;
+    width: 20em;
+    color: #999;
+    margin-top: 14em;
+
+ }
+ ul > h2 {
+     margin-bottom: 1em;
+ }
+ .cart-items-list {
+     margin-top: 2em;
+     width: 30em;
+     list-style: none;
+ }
+ 
+ .cart-item {
+     display: flex;
+     margin-bottom: 10px;
+ }
+ 
+ .cart-item-name {
+     font-size: 1.5em;
+     font-weight: bold;
+ }
+ .cart-item:last-child {
+     border-top: 1px solid black;
+     padding-top: 1em;
+     margin-top: 30em;
+ }
+ 
+ .cart-item-price {
+     margin-left: auto;
+     margin-right: 1em;
+     font-size: 1.5em;
+     font-weight: bold;
+     color: #999;
+ }
+ 
+ .continue-shopping-link {
+     display: block;
+     margin-top: 20px;
+     color: #0077cc;
+     text-decoration: none;
+ }
+
+ #cart-form  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+ }
+ #card-info > h2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+ }
+ #cart-form > div {
+    display: inline-flex;
+ }
+ #cart-form > div > input {
+    margin-left: auto;
+    margin-right: 1em;
+ }
+ #cart-form > div > label {
+    font-size: larger;
+    margin-left: 1em;
+    margin-right: auto;
+    margin-top: 1em;
+    font-weight: bolder;
+ }
+ #payment-btn {
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10em;
+    font-size: 1em;
+    height: 4em;
+ }
+ #errors {
+    margin-top: 1em;
+    margin-left: 1em;
+ }
+ 
+ 
