@@ -44,19 +44,19 @@ export default function Login() {
                 <form className="form" id="login-form" action="" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor='email'>Email</label> <br/>
-                        <input type="text" name="email" placeholder='Enter your email...' onChange={handleInput}/>
-                        {errors.email && <span>{errors.email}</span>}
+                        <input type="text" name="email" placeholder='Enter your email...' onChange={handleInput} />  <br />
+                        {errors.email && <span className="error-message">{errors.email}</span>}
                     </div>
                     <div>
                         <label htmlFor='password'>Password</label> <br/>
-                        <input type="password" name="password" placeholder='Enter your password...' onChange={handleInput} />
-                        {errors.password && <span>{errors.password}</span>}
+                        <input type="password" name="password" placeholder='Enter your password...' onChange={handleInput} />  <br />
+                        {errors.password && <span className="error-message">{errors.password}</span>}
                     </div>
                     <button id="login-btn" role=""type="submit">Log In</button>
                 </form>
                 {loginState && <span>{loginState}</span>}
                 <br />
-                <Link to="/Signup">Create an Account</Link>
+                <Link to="/Signup" id="link">Create an Account</Link>
             </div>
         </div>
     );

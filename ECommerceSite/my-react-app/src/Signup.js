@@ -121,10 +121,10 @@ function Signup() {
                         {errors.zipcode && <span className="error-message">{errors.zipcode}</span>}
                     </div>
                     <button id="signup-btn">SignUp</button>
-                    {registerState && <span className="error-message">{registerState}</span>}
-                    <Link id="link-to-acc" to="/Login">Already have an account?</Link>
+                    {registerState && <span className="error-message">{registerState}</span>} 
                 </form>
                 <br />
+                <Link id="link-to-acc" to="/Login">Already have an account?</Link>
             </div>
         </div>
     )

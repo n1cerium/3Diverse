@@ -6,17 +6,22 @@ input[type="text"], input[type="password"] {
     
 }
 .form {
-    background-color: bisque;
+    background-color: #6C4D78;
+    background-image: linear-gradient( 0deg, transparent 25%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent ), linear-gradient( 90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent );
+    height: 100%;
+    background-size: 50px 50px;
+    color: white;
     margin-top: 1em;
     border: 1px solid black;
     width: 30em;
     padding: 1em;
     display: grid;
     row-gap: 0.5em;
-
 }
 #register-body {
-    background-image: url("ghY4rc.webp");
+    background-color: transparent;
+    background-image: linear-gradient(0deg, transparent 25%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
     position: absolute;
     height: 160vh;
     width: 100%;
@@ -53,14 +58,16 @@ input[type="text"], input[type="password"] {
 }
 #link-to-acc {
     padding-top: 1em;
+    padding-bottom: 1em; 
     font-size: 1.3em;
-    color: black;
+    color: #AE7DC1;
 }
 #link-to-acc:hover {
-    color: green;
+    color: #6C4D78;
 }
 .error-message {
-    color:red;
-    font-size:1em;
+    color: #EE4B2B;
+    font-size: 1em;
     float: left;
 }
+
