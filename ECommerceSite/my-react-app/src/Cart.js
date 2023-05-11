@@ -22,7 +22,7 @@
         const handleSubmit = (e) => {
             const err = validate(cardInfo);
             setErrors(err);
-            if(err.C_Name === "" && err.C_Expiration === "" && err.C_Code === "" && err.C_Name === "" && err.C_Postal === "") {
+            if(err.C_Number === "" && err.C_Name === "" && err.C_Expiration === "" && err.C_Code === "" && err.C_Name === "" && err.C_Postal === "") {
                 axios.post('http://localhost:8080/CartRemove').then(res => {
                     console.log(res.data)
             }   );
