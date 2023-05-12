@@ -8,13 +8,6 @@ app.use(cors());
 app.use(express.json())
 app.use(express.static(path.join(__dirname + "/public")))
 
-// const db = mysql.createConnection( {
-//     host: "localhost",
-//     user: "root",
-//     password: "root",
-//     database: "ecommerce"
-// })
-
 const db = mysql.createConnection( {
     connectionLimit: 10,
     host: "database-1.cha9each1rtw.us-east-2.rds.amazonaws.com",
