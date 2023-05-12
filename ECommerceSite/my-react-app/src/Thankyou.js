@@ -10,7 +10,7 @@ export default function Thankyou() {
                 <h1 className="frontcolor">3Diverse</h1>
                 <div class="text-row row">
                     <div class="quote-container col-xs-10 col-xs-offset-1">
-                        <div class="text-container" id="quote-box">
+                        <div class="tyText-container" id="quote-box">
                            <p class="message">Thank you for shoppping with us!</p>
                         </div>
                     </div>
