@@ -38,18 +38,11 @@ html, body {
   /* Inside text box */
   .quote-container {
     background-color: rgba(250, 255, 255, 0.293);
-    border-radius: 20px;
+    border-radius: 20;
     padding: 4rem;
     color: #ffffff ;
-    font-size: 3rem;
+    font-size: 5rem;
     margin-top: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
   }
   
   .text-container,
