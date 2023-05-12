@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.af693d15.css",
+    "main.js": "/static/js/main.1aca2f16.js",
+    "static/js/787.bc7d429a.chunk.js": "/static/js/787.bc7d429a.chunk.js",
+    "static/media/drone.obj": "/static/media/drone.8c5dbd8cbe459b7aaeef.obj",
+    "static/media/map.jpg": "/static/media/map.5f0d981b22315fd48ca2.jpg",
+    "static/media/mug.obj": "/static/media/mug.da2842020ab9a46180de.obj",
+    "static/media/rubiks.obj": "/static/media/rubiks.94e3a9e74ef99a705832.obj",
+    "static/media/usbdrive.obj": "/static/media/usbdrive.890cb52ad767fa3020b3.obj",
+    "static/media/keyboard.obj": "/static/media/keyboard.12f3fa504858eef2378c.obj",
+    "static/media/blur-layer.webp": "/static/media/blur-layer.14b88556569cc43d61cd.webp",
+    "static/media/ghY4rc.webp": "/static/media/ghY4rc.4a5a7289c9ee16c15bac.webp",
+    "static/media/mcplank.fbx": "/static/media/mcplank.19d1197da6c4215d5b7f.fbx",
+    "static/media/drone.mtl": "/static/media/drone.428e963cfd9c0fed2461.mtl",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/mountain3.svg": "/static/media/mountain3.d9f37d75faad66cdf34ad686609240a7.svg",
+    "static/media/rubiks.mtl": "/static/media/rubiks.dc31bc10756f95c511a4.mtl",
+    "static/media/mountain1.svg": "/static/media/mountain1.74a8127ee6df90aaace9ac4797a1b7d6.svg",
+    "static/media/mountain2.svg": "/static/media/mountain2.f3cf4ef832ddaa53503803c5efdaf82a.svg",
+    "static/media/usbdrive.mtl": "/static/media/usbdrive.70e09ca8a90fb822e533.mtl",
+    "static/media/mountain5.svg": "/static/media/mountain5.22dbbf1167f323090fdaf252667a0476.svg",
+    "static/media/mountain4.svg": "/static/media/mountain4.6282cf939309007645d8d46995ff5dd1.svg",
+    "index.html": "/index.html",
+    "static/media/mug.mtl": "/static/media/mug.4a81b39f80f01f5c3374.mtl",
+    "static/media/hero-wave.svg": "/static/media/hero-wave.685dfe3b6267036bf639f2bf23c425a3.svg",
+    "static/media/keyboard.mtl": "/static/media/keyboard.02ecbc8b5a98a5494e16.mtl",
+    "main.af693d15.css.map": "/static/css/main.af693d15.css.map",
+    "main.1aca2f16.js.map": "/static/js/main.1aca2f16.js.map",
+    "787.bc7d429a.chunk.js.map": "/static/js/787.bc7d429a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af693d15.css",
+    "static/js/main.1aca2f16.js"
+  ]
+}
