@@ -24,20 +24,48 @@ const productInfo = {
     product5 : {type : ["cube", "toy", "technology"], price : 25.99},
     product6 : {type : ["technology"], price : 18.99}
 }
-
 //store page
 export default function Store() {
+    // this will be used to check if the current user 
+    let currentUser = sessionStorage.getItem("CurrentUser");
     //creates refs
     const ItemName = React.useRef([]);
     const ItemDescription = React.useRef([]);
     const ItemPrice = React.useRef([]);
     const [ItemInfo, SetInfo] = React.useState({});
+    const logText = React.useRef(null);
+    const hiddenState = React.useRef(null);
+    const c_Button = React.useRef([]);
+    let handleLogClick = "";
+
+    //if the user has not logged in yet, they will not be able to add item to the cart nor go to the cart page
+    React.useEffect(() => {
+        let state = "";
+        if(currentUser === "null" || currentUser === null) {
+            state = "hidden";
+        }
+        else if(currentUser !== "null") {
+            state = "not-hidden";
+        }
+
+        for(let i = 0; i < 6; i++) {
+            c_Button.current[i].className = state;
+        }
+        
+    })
+    //if they press log out, it will remove the user from the session storage
+    if(currentUser != null) {
+        handleLogClick = (e) => {
+            sessionStorage.setItem("CurrentUser",  null);
+            console.log("ok");
+        }
+    }
 
     //event handler
     const handleClick = (val, e) => {
         const price = ItemPrice.current[val].innerHTML.slice(2);
         const infos = {
-            c_User : sessionStorage.getItem("CurrentUser"),
+            c_User : currentUser,
             i_Name : ItemName.current[val].innerHTML,
             i_Description : ItemDescription.current[val].innerHTML,
             i_Price : parseFloat(price)
@@ -45,13 +73,16 @@ export default function Store() {
         SetInfo(infos);
         
         console.log(infos);
-        axios.post(`${baseURL}/shop`, ItemInfo).then(res => {
-            if(res.data === "Success") {
-                console.log("Successfully added to the cart");
-            } else {
-                console.log("Failed adding item to the cart")
-            }
-        });
+        if(ItemInfo.i_Name != "" && ItemInfo.i_Description != "" && ItemInfo.i_Price) {
+            axios.post(`${baseURL}/shop`, ItemInfo).then(res => {
+                if(res.data === "Success") {
+                    console.log("Successfully added to the cart");
+                } else {
+                    console.log("Failed adding item to the cart")
+                }
+            });
+        }
+        
     }
     /* Sidebar */
     const sidebarTypeListRef = useRef(null);
@@ -219,15 +250,20 @@ export default function Store() {
                 </div>
                 <div className="navbar">
                     <div className="navbarMenu">
-                        <Link to="/Login"><h3>Login</h3></Link>
-                        <Link to="/Cart"><h3>Cart</h3></Link>
+                        <Link onClick={handleLogClick} to="/Login">
+                            {currentUser === "null" || currentUser === null  ? <h3>Login</h3> : <h3>Logout</h3>}
+                        </Link>
+                        {currentUser === "null" || currentUser === null  ? "" : <Link to="/Cart"><h3>Cart</h3></Link> }
+                        {/*<Link className={linkClassName} to="/Cart"><h3>Cart</h3></Link>*/}
                     </div>
                 </div>
             </div>
 
             <div className="mobileNavbar">
-                <Link to="/Login"><h3>Login</h3></Link>
-                <Link to="/Cart"><h3>Cart</h3></Link>
+                <Link onClick={handleLogClick} to="/Login">
+                    {currentUser === "null" ? <h3>Login</h3> : <h3>Logout</h3>}
+                </Link>
+                {currentUser === "null" || currentUser === null  ? "" : <Link to="/Cart"><h3>Cart</h3></Link> }
             </div>
             
             <div className="mainBody">
@@ -341,7 +377,7 @@ export default function Store() {
                                 </div>
                                 <div className="descriptionCol2">
                                     <h2 ref={el => ItemPrice.current[0] = el}> ${productInfo.product1.price} </h2>
-                                    <button onClick={() => handleClick(0)}> Add to Cart </button>
+                                    <button ref={el => c_Button.current[0] = el} onClick={() => handleClick(0)}> Add to Cart </button>
                                 </div>
                             </div>
                         </div>
@@ -365,7 +401,7 @@ export default function Store() {
                                 </div>
                                 <div className="descriptionCol2">
                                     <h2 ref={el => ItemPrice.current[1] = el}> ${productInfo.product2.price} </h2>
-                                    <button onClick={() => handleClick(1)}> Add to Cart </button>
+                                    <button ref={el => c_Button.current[1] = el} onClick={() => handleClick(1)}> Add to Cart </button>
                                 </div>
                             </div>
                         </div>
@@ -388,7 +424,7 @@ export default function Store() {
                                 </div>
                                 <div className="descriptionCol2">
                                     <h2 ref = {el => ItemPrice.current[2] = el}> ${productInfo.product3.price} </h2>
-                                    <button onClick={() => handleClick(2)}> Add to Cart </button>
+                                    <button ref={el => c_Button.current[2] = el} onClick={() => handleClick(2)}> Add to Cart </button>
                                 </div>
                             </div>
                         </div>
@@ -411,7 +447,7 @@ export default function Store() {
                                 </div>
                                 <div className="descriptionCol2">
                                     <h2 ref = {el => ItemPrice.current[3] = el}> ${productInfo.product4.price} </h2>
-                                    <button onClick={() => handleClick(3)}> Add to Cart </button>
+                                    <button ref={el => c_Button.current[3] = el} onClick={() => handleClick(3)}> Add to Cart </button>
                                 </div>
                             </div>
                         </div>
@@ -434,7 +470,7 @@ export default function Store() {
                                 </div>
                                 <div className="descriptionCol2">
                                     <h2 ref = {el => ItemPrice.current[4] = el}> ${productInfo.product5.price} </h2>
-                                    <button onClick={() => handleClick(4)}> Add to Cart </button>
+                                    <button ref={el => c_Button.current[4] = el} onClick={() => handleClick(4)}> Add to Cart </button>
                                 </div>
                             </div>
                         </div>
@@ -457,7 +493,7 @@ export default function Store() {
                                 </div>
                                 <div className="descriptionCol2">
                                     <h2 ref = {el => ItemPrice.current[5] = el}> ${productInfo.product6.price} </h2>
-                                    <button onClick={() => handleClick(5)}> Add to Cart </button>
+                                    <button ref={el => c_Button.current[5] = el} onClick={() => handleClick(5)}> Add to Cart </button>
                                 </div>
                             </div>
                         </div>

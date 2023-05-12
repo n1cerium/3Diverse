@@ -7,6 +7,12 @@
     font-size: 14px;
     background-color: #202020;
 }
+.not-hidden {
+    visibility: visible;
+}
+.hidden {
+    visibility: hidden;
+}
 
 /*** HEADER ***/
 .header {

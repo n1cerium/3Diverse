@@ -22,6 +22,7 @@ function Signup() {
         zipcode: ''
     });
 
+    //this will handle navigating to different pages
     const navigate = useNavigate();
     const [registerState, setRegisterState] = useState("");
     const [errors, setErrors] = useState({})
@@ -45,6 +46,7 @@ function Signup() {
         console.log(err);
         if(err.F_Name === "" && err.L_Name === "" && err.email === "" && err.phone_number == ""  && err.password === "" 
            && err.address_line === "" && err.city === "" && err.state === "" && err.country === "" && err.zipcode === "") {
+            //this will send userData to the .../signup page, so the server side will be able to use this data to do something with it
             axios.post(`${baseURL}/signup`, userData).then(res => {
                 console.log(res)
                 let RegError = [];

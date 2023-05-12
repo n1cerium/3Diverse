@@ -29,10 +29,11 @@ export default function Login() {
         const err = validate(infos);
         setErrors(err);
         if(err.email === "" && err.password == "") {
+            // this will send the credentials to the login page if the user exists in the database and set the sessionstorage to that current user
             axios.post(`${baseURL}/login`, userData).then(res => {
-                console.log(res);
                 if(res.data === "Success") {
                     sessionStorage.setItem("CurrentUser", userData.email);
+                    console.log(sessionStorage.getItem("CurrentUser"));
                     navigate('/');
                 } else {
                     setLoginState("Incorrect email/password");

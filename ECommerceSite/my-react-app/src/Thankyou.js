@@ -4,6 +4,9 @@ import './Thankyou.css';
 
 //thank you page
 export default function Thankyou() {
+    const handleClick = (e) => {
+        sessionStorage.setItem("CurrentUser", null);
+    }
     return (
         /* Joshua Header Start */
         <div className="thankYouBody">
@@ -29,7 +32,7 @@ export default function Thankyou() {
                         </Link>
                     </div>
 
-                    <Link to="/" className="button-logout link-no-underline" role="button">
+                    <Link onClick={handleClick} to="/" className="button-logout link-no-underline" role="button">
                         Log out
                     </Link>
                 </div>
