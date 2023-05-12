@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import validate from './ValidateRegister';
 import axios from 'axios';
 import './Register.css';
+import {baseURL} from "./url"
 
 //register page
 function Signup() {
@@ -21,6 +22,7 @@ function Signup() {
         zipcode: ''
     });
 
+    //this will handle navigating to different pages
     const navigate = useNavigate();
     const [registerState, setRegisterState] = useState("");
     const [errors, setErrors] = useState({})
@@ -44,7 +46,8 @@ function Signup() {
         console.log(err);
         if(err.F_Name === "" && err.L_Name === "" && err.email === "" && err.phone_number == ""  && err.password === "" 
            && err.address_line === "" && err.city === "" && err.state === "" && err.country === "" && err.zipcode === "") {
-            axios.post('http://localhost:8080/signup', userData).then(res => {
+            //this will send userData to the .../signup page, so the server side will be able to use this data to do something with it
+            axios.post(`${baseURL}/signup`, userData).then(res => {
                 console.log(res)
                 let RegError = [];
                 if(res.data === "Email Fail") {

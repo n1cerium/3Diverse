@@ -1,12 +1,16 @@
     import * as React from 'react';
-    import { Link } from 'react-router-dom';
+    import { Link, useNavigate } from 'react-router-dom';
     import './Cart.css';
     import axios from 'axios';
     import validate from './ValidateCart'
+    import {baseURL} from "./url"
 
 //cart page
 export default function Cart() {
         //declare usestates
+        const [currUser, setCurrUser] = React.useState({
+            c_User: sessionStorage.getItem("CurrentUser")
+        });
         const [cartItems, setCartItems] = React.useState([]);
         const [errors, setErrors] = React.useState({})
         const [cardInfo, setCardInfo] = React.useState({
@@ -17,6 +21,7 @@ export default function Cart() {
             C_Postal: ""
         })
         let totalPrice = 0;
+        const navigate = useNavigate();
         const handleInput = (e) => {
             setCardInfo(prev => ({...prev, [e.target.name]: [e.target.value]}))
         };
@@ -25,13 +30,16 @@ export default function Cart() {
             const err = validate(cardInfo);
             setErrors(err);
             if(err.C_Number === "" && err.C_Name === "" && err.C_Expiration === "" && err.C_Code === "" && err.C_Name === "" && err.C_Postal === "") {
-                axios.post('http://localhost:8080/CartRemove').then(res => {
+                //this will remove all the items in the cart if they enter correct information
+                axios.post(`${baseURL}/CartRemove`).then(res => {
                     console.log(res.data)
-            }   );
+                    navigate("/Thankyou");
+                });
             }
             
         }
-        axios.post('http://localhost:8080/cart').then(res => {
+        // this will set the items in the cart for the current user that some items to the cart
+        axios.post(`${baseURL}/cart`, currUser).then(res => {
             setCartItems(res.data);
         });
         cartItems.forEach(

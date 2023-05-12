@@ -5,6 +5,7 @@ import { useState } from 'react';
 import validate from './ValidateLogIn'
 import axios from 'axios'
 import './Login.css';
+import {baseURL} from "./url"
 
 //login page
 export default function Login() {
@@ -17,6 +18,7 @@ export default function Login() {
     const [loginState, setLoginState] = useState("");
     const [errors, setErrors] = useState({})
     const handleSubmit = (e) => {   
+        const ok = baseURL
         e.preventDefault();
         const userData = {
             name: infos.name,
@@ -27,9 +29,11 @@ export default function Login() {
         const err = validate(infos);
         setErrors(err);
         if(err.email === "" && err.password == "") {
-            axios.post('http://localhost:8080/login', userData).then(res => {
+            // this will send the credentials to the login page if the user exists in the database and set the sessionstorage to that current user
+            axios.post(`${baseURL}/login`, userData).then(res => {
                 if(res.data === "Success") {
                     sessionStorage.setItem("CurrentUser", userData.email);
+                    console.log(sessionStorage.getItem("CurrentUser"));
                     navigate('/');
                 } else {
                     setLoginState("Incorrect email/password");
