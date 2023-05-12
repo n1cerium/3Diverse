@@ -203,7 +203,7 @@ export default function Store() {
 
     return (
     <>
-        <div className="body">
+        <div className="storeBody">
             <div className="header">
                 <div className="logo">
                     <Link to="/"><h1>3Diverse</h1></Link>
