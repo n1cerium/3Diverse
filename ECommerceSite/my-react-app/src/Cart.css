@@ -1,54 +1,139 @@
-/*css for the cart page*/
-/*flex container for the cart*/
- #cart-container {
-     display: flex;
-     flex-direction: column;
-     max-width: 800px;
-     margin: 0 auto;
-     padding: 20px;
+/* Joshua CSS Start */
+.cartBody {
+    margin: 0;
+    font-size: 14px;
+    background-color: #ffffff;
+    background-image:linear-gradient(#434343, #282828);
+}
+
+/*** HEADER ***/
+.cartHeader {
+    display: flex;
+    width: 100%;
+    height: 83px;
+    align-items: center;
+    background-color: #202020;
+    border-bottom: 3px solid #323232;
+}
+
+.cartHeader .cartLogo {
+    flex: 0 0 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.cartHeader .cartLogo h1 {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    font-size: 3.5em;
+    color: white;
+}
+
+/** logo **/
+.cartLogo h1 {
+    width: fit-content;
+}
+
+.cartLogo h1:hover {
+    cursor: pointer;
+}
+
+.cartLogo a {
+    text-decoration: none;
+    color: white;
+}
+
+#cart-container {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    background-image:
+        linear-gradient(
+            0deg, 
+            transparent 25%, 
+            rgba(255, 255, 255, .05) 25%,
+            rgba(255, 255, 255, .05) 26%, 
+            transparent 27%, 
+            transparent 74%, 
+            rgba(255, 255, 255, .05) 75%,
+            rgba(255, 255, 255, .05) 76%,
+            transparent 77%,
+            transparent
+        ),
+        linear-gradient(
+            90deg,
+            transparent 24%,
+            rgba(255, 255, 255, .05) 25%,
+            rgba(255, 255, 255, .05) 26%,
+            transparent 27%,
+            transparent 74%,
+            rgba(255, 255, 255, .05) 75%,
+            rgba(255, 255, 255, .05) 76%,
+            transparent 77%,
+            transparent
+        );
+    height:100%;
+    background-size:50px 50px;
+}
+
+.footer {
+    padding: 16px 16px 64px;
+    border-top: 3px solid #323232;
+    background-color: #202020;
+    color: white;
+    font-size: 1em;
+}
+
+/* Joshua CSS End */
+
+
+#cart-container {
+     width: 100%;
+     /* max-width: 800px; */
+     /* margin: 0 auto; */
+     padding: 40px 0;
  }
  #col-1 {
      align-self: center;
  }
  #col-2 {
-    display: flex;
-    gap: 50%;
-    margin-left: -20em;
- }
+   display: flex;
+   width: 100%;
+   flex-direction: column-reverse;
+   padding: 0 5%;
+   column-gap: 8%;
+   row-gap: 8%;
+}
  #col-2-1 {
+   flex: 0 0 46%;
+   background-color: #6C4D7890;
     border: 1px solid black;
     height: 50em;
-
+    padding-bottom: 600px;
  }
  #col-2-2 {
+   flex: 0 0 46%;
+   background-color: #6C4D7890;
     border: 1px solid black;
-    margin-top: auto;
-    margin-bottom: auto ;
+    margin: 0;
     height: 42em;
-    margin-left: -10em;
- }
-
- /*card input area*/
- #card-info {
-    width: 35em;
  }
  #cart-title {
      font-size: 32px;
      margin-bottom: 20px;
  }
- 
- .empty-cart-message {
-    font-size: 24px;
-    width: 20em;
-    color: #999;
-    margin-top: 14em;
 
- }
+ .empty-cart-message {
+   font-size: 1.25em;
+   width: 100%;
+   color: white;
+   margin-top: 20px;
+   text-align: center;
+}
  ul > h2 {
      margin-bottom: 1em;
  }
-
- /*css for the items*/
  .cart-items-list {
      margin-top: 2em;
      width: 30em;
@@ -77,16 +162,13 @@
      font-weight: bold;
      color: #999;
  }
-
- /*link*/
+ 
  .continue-shopping-link {
      display: block;
-     margin-top: 20px;
-     color: #0077cc;
-     text-decoration: none;
+     margin-top: 10px;
+     color: black;
  }
 
- /*css for the form*/
  #cart-form  {
     display: flex;
     flex-direction: column;
@@ -95,21 +177,26 @@
  #card-info > h2 {
     margin-top: 1em;
     margin-bottom: 1em;
+    font-size: 2em;
  }
  #cart-form > div {
-    display: inline-flex;
- }
- #cart-form > div > input {
-    margin-left: auto;
-    margin-right: 1em;
- }
- #cart-form > div > label {
-    font-size: larger;
-    margin-left: 1em;
-    margin-right: auto;
-    margin-top: 1em;
-    font-weight: bolder;
- }
+   display: flex;
+   flex-direction: column;
+   width: 80%;
+   margin: 0 auto;
+}
+#cart-form > div > input {
+   flex: 0 0 100%;
+   margin: 0;
+   font-size: 1.25em;
+}
+#cart-form > div > label {
+   flex: 0 0 100%;
+   margin: 0;
+   text-align: left;
+   font-weight: bold;
+   font-size: 1.45em;
+}
  #payment-btn {
     margin-top: 2em;
     margin-left: auto;
@@ -123,4 +210,34 @@
     margin-left: 1em;
  }
  
- 
+ @media only screen and (min-width: 850px) {
+    .cartBody {
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (min-width: 1460px) {
+   #col-2 {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      padding: 0 20%;
+      column-gap: 8%;
+      row-gap: 0;
+   }
+
+   #col-2-1 {
+       height: 50em;
+    }
+    #col-2-2 {
+       margin-top: auto;
+       margin-bottom: auto ;
+       height: 42em;
+    }
+
+    .empty-cart-message {
+      font-size: 24px;
+      margin-top: 14em;
+   }
+}

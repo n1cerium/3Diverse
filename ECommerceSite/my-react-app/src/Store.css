@@ -1,10 +1,8 @@
-/*css for store page*/
-
 * {
     box-sizing: border-box;
 }
 
-body {
+.storeBody {
     margin: 0;
     font-size: 14px;
     background-color: #202020;
@@ -22,17 +20,33 @@ body {
 
 .header .logo {
     flex: 0 0 100%;
-    padding-left: 20px;
-    margin-right: auto;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .header .logo h1 {
+    margin: 0 auto;
+    padding: 0;
     text-align: center;
     font-size: 3.5em;
     color: white;
 }
 
-/*navigation menu*/
+/** logo **/
+.logo h1 {
+    width: fit-content;
+}
+
+.logo h1:hover {
+    cursor: pointer;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+
+/** navbar **/
 .navbar {
     display: none;
     flex: 0 0 50%;
@@ -71,6 +85,7 @@ body {
 /*** MOBILE NAV BAR ***/
 .mobileNavbar {
     display: block;
+    background-color: #202020;
     border-bottom: 3px solid #323232;
 }
 
@@ -216,7 +231,6 @@ body {
     margin: 0 auto;
 }
 
-/*container for the products info*/
 .card {
     transition: 0.3s;
     width: 300px;
@@ -289,7 +303,6 @@ body {
     cursor: pointer;
 }
 
-/*three.js display canvas*/
 .canvas {
     height: 100%;
     position: relative;
@@ -298,7 +311,6 @@ body {
     border-radius: 20px;
 }
 
-/*footer*/
 .footer {
     padding: 16px 16px 64px;
     border-top: 3px solid #323232;
@@ -307,8 +319,13 @@ body {
     font-size: 1em;
 }
 
-.footer .logo h1 {
+.footer .logo {
+    width: fit-content;
+    margin: 0 auto;
     padding: 5px 0;
+}
+
+.footer .logo h1 {
     text-align: center;
     font-size: 2.75em;
     color: white;
@@ -331,10 +348,9 @@ body {
     font-weight: bold;
 }
 
-/*flex box*/
 /* Mobile size */
 @media only screen and (min-width: 500px) {
-    body {
+    .storeBody {
         font-size: 16px;
     }
 
@@ -345,9 +361,13 @@ body {
 
     .header .logo {
         flex: 0 0 50%;
+        padding-left: 20px;
+        margin-right: auto;
     }
 
     .header .logo h1 {
+        margin: 0;
+        padding: 0;
         text-align: left;
         font-size: 3em;
     }
