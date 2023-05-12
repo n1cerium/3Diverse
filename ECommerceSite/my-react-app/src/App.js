@@ -8,6 +8,7 @@ import ThreeEx from './ThreeEx';
 import Login from './Login';
 import Cart from './Cart';
 import SignUp from './Signup';
+import Thankyou from './Thankyou';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/Login" element={<Login />} />
               <Route path="/Signup" element={<SignUp />} />
               <Route path="/Cart" element={<Cart />} />
+              <Route path="/Thankyou" element={<Thankyou />} />
           </Routes>
       </div>
   );

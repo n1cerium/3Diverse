@@ -61,7 +61,7 @@
                             </li>
                             </ul>
                         )}
-                    <Link to="/Store" className="continue-shopping-link">Continue Shopping</Link>
+                    <Link to="/" className="continue-shopping-link">Continue Shopping</Link>
                     </div>
                     <div id="col-2-2">
                         <div id="card-info">
