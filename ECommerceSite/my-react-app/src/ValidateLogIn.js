@@ -1,7 +1,9 @@
+//checks for valid login user info
 function validate(val) {
     let error = []
     let atIdx;
     atIdx = String(val.email).indexOf('@');
+    //check if email is valide and has @
     if(val.email == "") {
         error.email = "Enter an email";
     } else if(String(val.email).match(/[@]/g) == null) { // must contains @
@@ -12,7 +14,7 @@ function validate(val) {
     else {
         error.email = "";
     }
-
+    //check if password is entered
     if(val.password == "") {
         error.password = "Enter password";
     } else {

@@ -12,7 +12,7 @@ import { OrbitControls } from "@react-three/drei";
 
 
 /* example from https://www.youtube.com/watch?v=wxvSHOrBHbw */
-
+//creates the canvas to display the box model
 export default function About() {
     return (
         <Wrapper className="App">
@@ -30,6 +30,7 @@ export default function About() {
     );
 }
 
+//css
 const Wrapper = styled.div`
   position: relative;
   background: #1f1144;

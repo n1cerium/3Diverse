@@ -4,8 +4,9 @@
     import axios from 'axios';
     import validate from './ValidateCart'
 
-
-    export default function Cart() {
+//cart page
+export default function Cart() {
+        //declare usestates
         const [cartItems, setCartItems] = React.useState([]);
         const [errors, setErrors] = React.useState({})
         const [cardInfo, setCardInfo] = React.useState({
@@ -19,6 +20,7 @@
         const handleInput = (e) => {
             setCardInfo(prev => ({...prev, [e.target.name]: [e.target.value]}))
         };
+        //error check
         const handleSubmit = (e) => {
             const err = validate(cardInfo);
             setErrors(err);
@@ -35,8 +37,9 @@
         cartItems.forEach(
             (item) => {
                 totalPrice += item.Price;
-        });
+            });
 
+    //html code insertion
     return (
         <>
             {/* Joshua Header Start */}

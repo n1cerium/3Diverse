@@ -3,6 +3,7 @@ import './Store.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+//imports all the models
 import Rubiks from "./component/products/Rubiks";
 import Drone from "./component/products/Drone";
 import Mug from "./component/products/Mug";
@@ -13,6 +14,7 @@ import Keyboard from "./component/products/Keyboard";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 
+//sets the filter properties
 const productInfo = {
     product1 : {type : ["cube", "toy"], price : 13.99},
     product2 : {type : ["technology"], price : 269.99},
@@ -22,12 +24,15 @@ const productInfo = {
     product6 : {type : ["technology"], price : 18.99}
 }
 
+//store page
 export default function Store() {
+    //creates refs
     const ItemName = React.useRef([]);
     const ItemDescription = React.useRef([]);
     const ItemPrice = React.useRef([]);
     const [ItemInfo, SetInfo] = React.useState({});
-    
+
+    //event handler
     const handleClick = (val, e) => {
         const price = ItemPrice.current[val].innerHTML.slice(2);
         const infos = {
@@ -39,6 +44,7 @@ export default function Store() {
         SetInfo(infos);
         
         console.log(infos);
+        //check for adding to cart
         axios.post('http://localhost:8080/shop', ItemInfo).then(res => {
             if(res.data === "Success") {
                 console.log("Successfully added to the cart");
@@ -51,6 +57,7 @@ export default function Store() {
     const sidebarTypeListRef = useRef(null);
     const sidebarPriceListRef = useRef(null);
 
+    //filter display handeller
     const sidebarOptionClick = (filterOption) => {
         if(filterOption == "type") {
             if(sidebarTypeListRef.current.style.display == "block") {
@@ -79,6 +86,7 @@ export default function Store() {
     const [sidebarType3Checked, setSidebarType3Checked] = useState(false);
     const [sidebarType4Checked, setSidebarType4Checked] = useState(false);
 
+    //check boxs
     const sidebarTypeCheckbox = (event, val) => {
         let check = 0;
         switch(val) {
@@ -125,6 +133,7 @@ export default function Store() {
         filterProducts(check);
     }
 
+    //displaying correct product based on filter
     function filterProducts(check) {
         let allProducts = {
             product1 : productItem1Ref,
@@ -200,7 +209,7 @@ export default function Store() {
             }
         }
     }
-
+    //html code insertion
     return (
     <>
         <div className="storeBody">

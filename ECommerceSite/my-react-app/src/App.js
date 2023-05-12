@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
+//import the pages
 import Home from './Home';
 import Store from './Store';
 import ThreeEx from './ThreeEx';
@@ -10,11 +11,12 @@ import Cart from './Cart';
 import SignUp from './Signup';
 import Thankyou from './Thankyou';
 
+//creats navigation betwwen pages with routes
 function App() {
   return (
       <div className="App">
           <Routes>
-          <Route path="/" element={<Store />} />
+              <Route path="/" element={<Store />} />
               <Route path="/Welcome" element={<Home />} />
               <Route path="/ThreeEx" element={<ThreeEx />} />
               <Route path="/Login" element={<Login />} />

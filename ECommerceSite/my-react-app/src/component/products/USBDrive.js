@@ -6,6 +6,9 @@ import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 import usbdriveObj from "../../models/usbdrive.obj";
 import usbdriveMtl from "../../models/usbdrive.mtl";
 
+//creates a usb model from the imported obj and mtl
+// uses loaders to load the materials and objesct
+
 export default function USBDrive() {
     const group = useRef();
     const materials = useLoader(MTLLoader, usbdriveMtl);

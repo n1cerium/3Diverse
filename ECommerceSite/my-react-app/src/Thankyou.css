@@ -5,7 +5,6 @@
   background-color: #ffffff;
   background-image:linear-gradient(#434343, #282828);
 }
-
 .thankYouHeader {
   display: flex;
   width: 100%;
@@ -129,6 +128,7 @@
     margin-top: 55px;
   } */
 
+  /*thank you text area*/
   .tyQuote-container {
     margin-top: 0;
     padding-top: 0;
@@ -212,7 +212,7 @@
       animation: 1s glitch;
       animation-timing-function: steps(2, end);
     }
-    
+    /*animation*/
     @keyframes glitch {
       0% {
         clip-path: var(--slice-1);
@@ -299,6 +299,7 @@
       color: #fff;
     }
 
+/*mobile*/
 @media only screen and (min-width: 500px) {
   .thankYouBody {
       font-size: 16px;
@@ -312,7 +313,7 @@
     font-size: 4em;
   }
 }
-
+/*destop*/
 @media only screen and (min-width: 1100px) {
   .tyText-container {
     margin: 0 30%;

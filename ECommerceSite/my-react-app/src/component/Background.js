@@ -9,6 +9,9 @@ import mountain5 from "../images/mountain5.svg";
 import heroWave from "../images/hero-wave.svg";
 import blurLayer from "../images/blur-layer.webp";
 
+
+//creates a background from tutorial
+
 export default function HeroBackground() {
     return (
         <Wrapper>

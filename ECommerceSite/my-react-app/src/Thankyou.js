@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './Thankyou.css';
 
+//thank you page
 export default function Thankyou() {
     return (
         /* Joshua Header Start */

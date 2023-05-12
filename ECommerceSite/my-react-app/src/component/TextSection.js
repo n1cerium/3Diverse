@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+//creates a title and description for example
+
 export default function TextSection() {
     return (
         <Wrapper>
