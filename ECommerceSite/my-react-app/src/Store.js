@@ -206,7 +206,7 @@ export default function Store() {
         <div className="body">
             <div className="header">
                 <div className="logo">
-                    <h1>3Diverse</h1>
+                    <Link to="/"><h1>3Diverse</h1></Link>
                 </div>
                 <div className="navbar">
                     <div className="navbarMenu">
@@ -309,9 +309,9 @@ export default function Store() {
                         </div>
                     </div>
 
-                    <div className ="bottom">
+                    {/* <div className ="bottom">
                         <Link to="/ThreeEx"><h3>Three.js Example</h3></Link>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="products">
@@ -458,7 +458,7 @@ export default function Store() {
 
             <div className="footer">
                 <div className="logo">
-                    <h1>3Diverse</h1>
+                    <Link to="/"><h1>3Diverse</h1></Link>
                 </div>
                 <p>Contact us at: <a href="#" target="_blank">support@3Diverse.com</a></p>
                 <p><a href="#" target="_blank">Subscribe to our newsletter</a></p>
