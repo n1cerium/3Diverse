@@ -1,10 +1,12 @@
 const express = require("express");
 const mysql = require("mysql");
 const cors = require("cors");
+const path = require("path")
 
 const app = express();
 app.use(cors());
 app.use(express.json())
+app.use(express.static(path.join(__dirname + "/public")))
 
 // const db = mysql.createConnection( {
 //     host: "localhost",
@@ -114,6 +116,6 @@ app.post('/CartRemove', (req, res) => {
         }
     })
 })
-app.listen(8080, ()=>{
+app.listen(process.env.PORT || 8080, ()=>{
     console.log("listening");
 })
