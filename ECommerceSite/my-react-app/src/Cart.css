@@ -1,3 +1,5 @@
+/*css for the cart page*/
+/*flex container for the cart*/
  #cart-container {
      display: flex;
      flex-direction: column;
@@ -25,6 +27,8 @@
     height: 42em;
     margin-left: -10em;
  }
+
+ /*card input area*/
  #card-info {
     width: 35em;
  }
@@ -43,6 +47,8 @@
  ul > h2 {
      margin-bottom: 1em;
  }
+
+ /*css for the items*/
  .cart-items-list {
      margin-top: 2em;
      width: 30em;
@@ -71,7 +77,8 @@
      font-weight: bold;
      color: #999;
  }
- 
+
+ /*link*/
  .continue-shopping-link {
      display: block;
      margin-top: 20px;
@@ -79,6 +86,7 @@
      text-decoration: none;
  }
 
+ /*css for the form*/
  #cart-form  {
     display: flex;
     flex-direction: column;

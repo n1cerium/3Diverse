@@ -1,3 +1,4 @@
+//checks for valid cart user info
 function validate(val) {
     let error = []
     error.C_Number = ValidateCardNum(val);
@@ -14,7 +15,7 @@ function validate(val) {
     return error;
    
 }
-
+//card check for numbers and length
 function ValidateCardNum(val) {
     let TempCardVal = String(val.C_Number).replaceAll(" ", "");
     if(TempCardVal === "") {
@@ -26,6 +27,7 @@ function ValidateCardNum(val) {
     }
     return "";
 }
+//Expiration date check for month by name, and day, year by length
 function ValidateExpiration(val) {
     let DateSplit = String(val.C_Expiration).split(" ");
     const months = ['January', 'Febraury', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -51,6 +53,7 @@ function ValidateExpiration(val) {
     return "";
 
 }
+//cvc check by length
 function ValidateCVC(val) {
     let TempCode = String(val.C_Code)
     if(TempCode === "") {
@@ -61,7 +64,7 @@ function ValidateCVC(val) {
     }
     return "";
 }
-
+//postal code check by length
 function ValidatePostal(val) {
     let TempPostal = String(val.C_Postal);
     if(TempPostal === "") {

@@ -6,6 +6,9 @@ import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 import keyboardObj from "../../models/keyboard.obj";
 import keyboardMtl from "../../models/keyboard.mtl";
 
+//creates a keyboard model from the imported obj and mtl
+// uses loaders to load the materials and objesct
+
 export default function Keyboard() {
     const group = useRef();
     const materials = useLoader(MTLLoader, keyboardMtl);

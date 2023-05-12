@@ -6,7 +6,9 @@ import validate from './ValidateLogIn'
 import axios from 'axios'
 import './Login.css';
 
+//login page
 export default function Login() {
+    //declare usestates
     const [infos, setInfos] = useState({
         email: '',
         password: ''
@@ -21,6 +23,7 @@ export default function Login() {
             email: infos.email,
             password: infos.password
         }
+        //login error check 
         const err = validate(infos);
         setErrors(err);
         if(err.email === "" && err.password == "") {
@@ -37,6 +40,7 @@ export default function Login() {
     const handleInput = (e) => {
         setInfos(prev => ({...prev, [e.target.name]: [e.target.value]}))
     }
+    //html code insertion
     return (
         <div id="login-body">
             <div id="login-page">

@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
+//home page
+//html code insertion
 export default function Home() {
     return (
              

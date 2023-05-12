@@ -1,3 +1,5 @@
+/*css for store page*/
+
 * {
     box-sizing: border-box;
 }
@@ -30,6 +32,7 @@ body {
     color: white;
 }
 
+/*navigation menu*/
 .navbar {
     display: none;
     flex: 0 0 50%;
@@ -213,6 +216,7 @@ body {
     margin: 0 auto;
 }
 
+/*container for the products info*/
 .card {
     transition: 0.3s;
     width: 300px;
@@ -285,6 +289,7 @@ body {
     cursor: pointer;
 }
 
+/*three.js display canvas*/
 .canvas {
     height: 100%;
     position: relative;
@@ -293,6 +298,7 @@ body {
     border-radius: 20px;
 }
 
+/*footer*/
 .footer {
     padding: 16px 16px 64px;
     border-top: 3px solid #323232;
@@ -325,6 +331,7 @@ body {
     font-weight: bold;
 }
 
+/*flex box*/
 /* Mobile size */
 @media only screen and (min-width: 500px) {
     body {
