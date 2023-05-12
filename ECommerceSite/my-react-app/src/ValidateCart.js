@@ -20,7 +20,6 @@ function ValidateCardNum(val) {
     if(TempCardVal === "") {
         return "Please your Card Number";
     }
-    console.log(TempCardVal.length);
     if(TempCardVal.length != 16 || isNaN(TempCardVal)) {
         return "Enter a valid Card Number"
     }
