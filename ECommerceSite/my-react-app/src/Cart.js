@@ -3,6 +3,7 @@
     import './Cart.css';
     import axios from 'axios';
     import validate from './ValidateCart'
+    import {baseURL} from "./url"
 
 
     export default function Cart() {
@@ -23,13 +24,13 @@
             const err = validate(cardInfo);
             setErrors(err);
             if(err.C_Number === "" && err.C_Name === "" && err.C_Expiration === "" && err.C_Code === "" && err.C_Name === "" && err.C_Postal === "") {
-                axios.post('http://localhost:8080/CartRemove').then(res => {
+                axios.post(`${baseURL}/CartRemove`).then(res => {
                     console.log(res.data)
             }   );
             }
             
         }
-        axios.post('http://localhost:8080/cart').then(res => {
+        axios.post(`${baseURL}/cart`).then(res => {
             setCartItems(res.data);
         });
         cartItems.forEach(

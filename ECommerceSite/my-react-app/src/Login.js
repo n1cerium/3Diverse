@@ -5,6 +5,7 @@ import { useState } from 'react';
 import validate from './ValidateLogIn'
 import axios from 'axios'
 import './Login.css';
+import {baseURL} from "./url"
 
 export default function Login() {
     const [infos, setInfos] = useState({
@@ -15,6 +16,7 @@ export default function Login() {
     const [loginState, setLoginState] = useState("");
     const [errors, setErrors] = useState({})
     const handleSubmit = (e) => {   
+        const ok = baseURL
         e.preventDefault();
         const userData = {
             name: infos.name,
@@ -24,7 +26,8 @@ export default function Login() {
         const err = validate(infos);
         setErrors(err);
         if(err.email === "" && err.password == "") {
-            axios.post('http://localhost:8080/login', userData).then(res => {
+            axios.post(`${baseURL}/login`, userData).then(res => {
+                console.log(res);
                 if(res.data === "Success") {
                     sessionStorage.setItem("CurrentUser", userData.email);
                     navigate('/');

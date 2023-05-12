@@ -2,6 +2,7 @@ import React, { Suspense, useRef, useState } from 'react';
 import './Store.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import {baseURL} from "./url"
 
 import Rubiks from "./component/products/Rubiks";
 import Drone from "./component/products/Drone";
@@ -39,7 +40,7 @@ export default function Store() {
         SetInfo(infos);
         
         console.log(infos);
-        axios.post('http://localhost:8080/shop', ItemInfo).then(res => {
+        axios.post(`${baseURL}/shop`, ItemInfo).then(res => {
             if(res.data === "Success") {
                 console.log("Successfully added to the cart");
             } else {
