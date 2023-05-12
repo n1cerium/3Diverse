@@ -123,7 +123,8 @@
 
   .text-container {
     margin: 0 4%;
-    background-color: #6C4D78BB;
+    background-color: #6C4D7890;
+    border: 1px solid black;
     color: white;
     padding: 20px 20px;
   }

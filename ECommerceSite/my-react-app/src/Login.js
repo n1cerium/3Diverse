@@ -66,6 +66,7 @@ export default function Login() {
                     {loginState && <span>{loginState}</span>}
                     <br />
                     <Link to="/Signup" id="link">Create an Account</Link>
+                    <Link to="/" id="link">Go back to store</Link>
                 </div>
             </div>
         
