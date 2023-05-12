@@ -1,4 +1,4 @@
-
+//checks for valid register user info
 function validate(val) {
     let error = [];
     error.password = validatePassword(val)
@@ -6,7 +6,7 @@ function validate(val) {
     error.zipcode = validateZipcode(val)
     
     
-    
+    //checks all areas required are filled correctly
     if(val.F_Name === "") {
         error.F_Name = "Enter your First Name";
     } else {
@@ -37,7 +37,7 @@ function validate(val) {
     } else {
         error.country = "";
     }
-
+    //check if phone is not letters
     if(val.phone === "") {
         error.phone_number = "Enter your Phone Number";
     } else if((/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im).test(val.phone) === false) {
@@ -50,6 +50,7 @@ function validate(val) {
 
     return error;
 }
+//check for valid zip code by length 
 function validateZipcode(val) {
     if(val.zipcode === "") {
         return "Enter a Zipcode"
@@ -64,6 +65,7 @@ function validateZipcode(val) {
     }
     return "";
 }
+//check for valid password requiring ...
 function validatePassword(val) {
     if(val.password === "") {
         return "Enter a password";
@@ -77,22 +79,22 @@ function validatePassword(val) {
     if(/[a-z]/.test(val.password) === false) { // check for lowercase
         return "The password must contain at least 1 lower case";
     }
-    if(/[0-9]/.test(val.password) === false){
+    if(/[0-9]/.test(val.password) === false){ // check for number
         return "The password must contain at least 1 numeric value";
     }
-    if(/[_!@]/.test(val.password) === false) {
+    if(/[_!@]/.test(val.password) === false) { // check for symbol
         return "A password can only contain '_', '@', and '!'";
     }
     return "";
 }
-
+//check for valide email 
 function validateEmail(val) {
     let atIdx = val.email
     atIdx = String(val.email).indexOf('@');
     if(val.email === "") {
         return "Enter an email";
     }
-    if(String(val.email).match(/[@]/g) === null) { 
+    if (String(val.email).match(/[@]/g) === null) { // a @ must be present 
         return "The email must have `@`";
     }
     if(String(val.email).substring(atIdx+2).match(/[.]/g) == null) { // a dot must be present after the @ 

@@ -5,6 +5,10 @@ import { TextureLoader } from "three/src/loaders/TextureLoader";
 import texture from "../images/map.jpg";
 
 
+//creates the 3d box 
+//uses txtureloader from three to add the texture image to the sides of the box
+//returns a mesh that can rotate and generating a geometric shape size 3 with a color map
+
 export default function Box() {
     const colorMap = useLoader(TextureLoader, texture);
     return (
@@ -15,5 +19,5 @@ export default function Box() {
     );
 }
 
-// <meshLambertMaterial attach="material" color="blue" /> 
+// <meshLambertMaterial attach="material" color="blue" />  other was to add color 
 // <meshNormalMaterial attach="material" />

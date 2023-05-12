@@ -6,6 +6,9 @@ import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 import mugObj from "../../models/mug.obj";
 import mugMtl from "../../models/mug.mtl";
 
+//creates a mug model from the imported obj and mtl
+// uses loaders to load the materials and objesct
+
 export default function Mug() {
     const group = useRef();
     const materials = useLoader(MTLLoader, mugMtl);

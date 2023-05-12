@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-body {
+.storeBody {
     margin: 0;
     font-size: 14px;
     background-color: #202020;
@@ -20,16 +20,33 @@ body {
 
 .header .logo {
     flex: 0 0 100%;
-    padding-left: 20px;
-    margin-right: auto;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .header .logo h1 {
+    margin: 0 auto;
+    padding: 0;
     text-align: center;
     font-size: 3.5em;
     color: white;
 }
 
+/** logo **/
+.logo h1 {
+    width: fit-content;
+}
+
+.logo h1:hover {
+    cursor: pointer;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+
+/** navbar **/
 .navbar {
     display: none;
     flex: 0 0 50%;
@@ -68,6 +85,7 @@ body {
 /*** MOBILE NAV BAR ***/
 .mobileNavbar {
     display: block;
+    background-color: #202020;
     border-bottom: 3px solid #323232;
 }
 
@@ -171,6 +189,10 @@ body {
     font-size: 1.15em;
 }
 
+.sidebarMenu input:hover {
+    cursor: pointer;
+}
+
 /** products **/
 .products {
     display: grid;
@@ -213,7 +235,8 @@ body {
     margin: 0 auto;
 }
 
-.card {
+/*text area info for items*/
+.productCard {
     transition: 0.3s;
     width: 300px;
     height: 320px;
@@ -221,12 +244,15 @@ body {
     position: relative;
 }
 
-.card:hover {
+.productCard:hover {
     cursor: grab;
 }
 
-.card:hover:active .description {
+.productCard:hover:active {
     cursor: grabbing;
+}
+
+.productCard:hover:active .description {
     visibility: hidden;
     opacity: 0;
     -webkit-transition: visibility 0.15s, opacity 0.15s linear;
@@ -285,6 +311,7 @@ body {
     cursor: pointer;
 }
 
+/*canvas for model*/
 .canvas {
     height: 100%;
     position: relative;
@@ -293,6 +320,7 @@ body {
     border-radius: 20px;
 }
 
+/*footer*/
 .footer {
     padding: 16px 16px 64px;
     border-top: 3px solid #323232;
@@ -301,8 +329,13 @@ body {
     font-size: 1em;
 }
 
-.footer .logo h1 {
+.footer .logo {
+    width: fit-content;
+    margin: 0 auto;
     padding: 5px 0;
+}
+
+.footer .logo h1 {
     text-align: center;
     font-size: 2.75em;
     color: white;
@@ -327,7 +360,7 @@ body {
 
 /* Mobile size */
 @media only screen and (min-width: 500px) {
-    body {
+    .storeBody {
         font-size: 16px;
     }
 
@@ -338,9 +371,13 @@ body {
 
     .header .logo {
         flex: 0 0 50%;
+        padding-left: 20px;
+        margin-right: auto;
     }
 
     .header .logo h1 {
+        margin: 0;
+        padding: 0;
         text-align: left;
         font-size: 3em;
     }
@@ -386,7 +423,7 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
     }
 
-    .card {
+    .productCard {
         width: 420px;
     }
 

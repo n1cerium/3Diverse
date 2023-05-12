@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {baseURL} from "./url"
 
+//imports all the models
 import Rubiks from "./component/products/Rubiks";
 import Drone from "./component/products/Drone";
 import Mug from "./component/products/Mug";
@@ -14,6 +15,7 @@ import Keyboard from "./component/products/Keyboard";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 
+//sets the filter properties
 const productInfo = {
     product1 : {type : ["cube", "toy"], price : 13.99},
     product2 : {type : ["technology"], price : 269.99},
@@ -23,12 +25,15 @@ const productInfo = {
     product6 : {type : ["technology"], price : 18.99}
 }
 
+//store page
 export default function Store() {
+    //creates refs
     const ItemName = React.useRef([]);
     const ItemDescription = React.useRef([]);
     const ItemPrice = React.useRef([]);
     const [ItemInfo, SetInfo] = React.useState({});
-    
+
+    //event handler
     const handleClick = (val, e) => {
         const price = ItemPrice.current[val].innerHTML.slice(2);
         const infos = {
@@ -52,6 +57,7 @@ export default function Store() {
     const sidebarTypeListRef = useRef(null);
     const sidebarPriceListRef = useRef(null);
 
+    //filter display handeller
     const sidebarOptionClick = (filterOption) => {
         if(filterOption == "type") {
             if(sidebarTypeListRef.current.style.display == "block") {
@@ -80,6 +86,7 @@ export default function Store() {
     const [sidebarType3Checked, setSidebarType3Checked] = useState(false);
     const [sidebarType4Checked, setSidebarType4Checked] = useState(false);
 
+    //check boxs
     const sidebarTypeCheckbox = (event, val) => {
         let check = 0;
         switch(val) {
@@ -126,6 +133,7 @@ export default function Store() {
         filterProducts(check);
     }
 
+    //displaying correct product based on filter
     function filterProducts(check) {
         let allProducts = {
             product1 : productItem1Ref,
@@ -201,13 +209,13 @@ export default function Store() {
             }
         }
     }
-
+    //html code insertion
     return (
     <>
-        <div className="body">
+        <div className="storeBody">
             <div className="header">
                 <div className="logo">
-                    <h1>3Diverse</h1>
+                    <Link to="/"><h1>3Diverse</h1></Link>
                 </div>
                 <div className="navbar">
                     <div className="navbarMenu">
@@ -310,14 +318,14 @@ export default function Store() {
                         </div>
                     </div>
 
-                    <div className ="bottom">
+                    {/* <div className ="bottom">
                         <Link to="/ThreeEx"><h3>Three.js Example</h3></Link>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="products">
                     <div className="productItem1" ref={productItem1Ref}>
-                        <div className="card">
+                        <div className="productCard">
                             <Canvas className="canvas">
                                 <OrbitControls enableZoom={false} />
                                 <ambientLight intensity={0.5} />
@@ -340,7 +348,7 @@ export default function Store() {
                     </div>
                             
                     <div className="productItem2" ref={productItem2Ref}>
-                        <div className="card">
+                        <div className="productCard">
                             <Canvas className="canvas">
                                 <OrbitControls enableZoom={false} />
                                 <ambientLight intensity={0.5} />
@@ -364,7 +372,7 @@ export default function Store() {
                     </div>
 
                     <div className="productItem3" ref={productItem3Ref}>
-                        <div className="card">
+                        <div className="productCard">
                             <Canvas className="canvas">
                                 <OrbitControls enableZoom={false} />
                                 <ambientLight intensity={0.5} />
@@ -387,7 +395,7 @@ export default function Store() {
                     </div>
 
                     <div className="productItem4" ref={productItem4Ref}>
-                        <div className="card">
+                        <div className="productCard">
                             <Canvas className="canvas">
                                 <OrbitControls enableZoom={false} />
                                 <ambientLight intensity={0.5} />
@@ -410,7 +418,7 @@ export default function Store() {
                     </div>
 
                     <div className="productItem5" ref={productItem5Ref}>
-                        <div className="card">
+                        <div className="productCard">
                             <Canvas className="canvas">
                                 <OrbitControls enableZoom={false} />
                                 <ambientLight intensity={0.5} />
@@ -433,7 +441,7 @@ export default function Store() {
                     </div>
 
                     <div className="productItem6" ref={productItem6Ref}>
-                        <div className="card">
+                        <div className="productCard">
                             <Canvas className="canvas">
                                 <OrbitControls enableZoom={false} />
                                 <ambientLight intensity={0.5} />
@@ -459,7 +467,7 @@ export default function Store() {
 
             <div className="footer">
                 <div className="logo">
-                    <h1>3Diverse</h1>
+                    <Link to="/"><h1>3Diverse</h1></Link>
                 </div>
                 <p>Contact us at: <a href="#" target="_blank">support@3Diverse.com</a></p>
                 <p><a href="#" target="_blank">Subscribe to our newsletter</a></p>
