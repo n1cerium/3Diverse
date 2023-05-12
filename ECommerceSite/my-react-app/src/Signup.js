@@ -58,7 +58,7 @@ function Signup() {
                 }
                 if(res.data === "Success") {
                     sessionStorage.setItem("CurrentUser", userData.email);
-                    navigate('/Login')
+                    navigate('/Welcome')
                 }
             }).catch(err => console.log(err));
         } else {

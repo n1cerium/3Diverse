@@ -261,7 +261,7 @@ export default function Store() {
 
             <div className="mobileNavbar">
                 <Link onClick={handleLogClick} to="/Login">
-                    {currentUser === "null" ? <h3>Login</h3> : <h3>Logout</h3>}
+                    {currentUser === "null" || currentUser === null  ? <h3>Login</h3> : <h3>Logout</h3>}
                 </Link>
                 {currentUser === "null" || currentUser === null  ? "" : <Link to="/Cart"><h3>Cart</h3></Link> }
             </div>
