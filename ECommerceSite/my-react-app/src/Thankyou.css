@@ -1,3 +1,87 @@
+/*** HEADER ***/
+.thankYouBody {
+  margin: 0;
+  font-size: 14px;
+  background-color: #ffffff;
+  background-image:linear-gradient(#434343, #282828);
+}
+
+.thankYouHeader {
+  display: flex;
+  width: 100%;
+  height: 83px;
+  align-items: center;
+  background-color: #202020;
+  border-bottom: 3px solid #323232;
+}
+
+.thankYouHeader .thankYouLogo {
+  flex: 0 0 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.thankYouHeader .thankYouLogo h1 {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  font-size: 3.5em;
+  color: white;
+}
+
+/** logo **/
+.thankYouLogo h1 {
+  width: fit-content;
+}
+
+.thankYouLogo h1:hover {
+  cursor: pointer;
+}
+
+.thankYouLogo a {
+  text-decoration: none;
+  color: white;
+}
+
+#tyContent {
+  display: block;
+  padding: 100px 0;
+  background-color: transparent;
+  background-image:
+      linear-gradient(
+          0deg, 
+          transparent 25%, 
+          rgba(255, 255, 255, .05) 25%,
+          rgba(255, 255, 255, .05) 26%, 
+          transparent 27%, 
+          transparent 74%, 
+          rgba(255, 255, 255, .05) 75%,
+          rgba(255, 255, 255, .05) 76%,
+          transparent 77%,
+          transparent
+      ),
+      linear-gradient(
+          90deg,
+          transparent 24%,
+          rgba(255, 255, 255, .05) 25%,
+          rgba(255, 255, 255, .05) 26%,
+          transparent 27%,
+          transparent 74%,
+          rgba(255, 255, 255, .05) 75%,
+          rgba(255, 255, 255, .05) 76%,
+          transparent 77%,
+          transparent
+      );
+  height:100%;
+  background-size:50px 50px;
+}
+
+
+
+
+
+
+
 /* html, body {
     height: 100%;
     margin:0;
@@ -8,16 +92,16 @@
     background-image:linear-gradient(#434343, #282828);
     background-size: cover;
   } */
-  #content{
+  /* #tyContent{
     background-color: transparent;
     background-image:linear-gradient(0deg, transparent 25%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
     height:10%;
     margin:0;
     padding:0;
     background-size:50px 50px;
-  }
+  } */
   
-  .frontcolor {
+  .tyFrontcolor {
     color: white;
   }
   
@@ -36,27 +120,57 @@
     font-family: 'Rubik', sans-serif;
   } */
   /* Inside text box */
-  .quote-container {
+  /* .tyQuote-container {
     background-color: rgba(250, 255, 255, 0.293);
     border-radius: 20;
     padding: 4rem;
     color: #ffffff ;
     font-size: 5rem;
     margin-top: 55px;
+  } */
+
+  .tyQuote-container {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .tyText-container {
+    margin: 0 4%;
+    background-color: #6C4D7890;
+    border: 1px solid black;
+    color: white;
+    padding: 20px 20px;
+  }
+
+  .tyText-container h3 {
+    color: white;
+    padding-bottom: 10px;
+    font-size: 2em;
+  }
+
+  .tyText-container p {
+    font-size: 2.25em;
+    padding-bottom: 16px;
   }
   
   .tyText-container,
   .credits {
     text-align: center;
   }
+
+  .button-return-store-div {
+    margin-top: -80px;
+    margin-bottom: -120px;
+    font-size: 1.6em;
+  }
     
     /*button for return store*/
     .button-return-store,
     .button-return-store:after {
         
-      width: 150px;
-      height: 76px;
-      line-height: 80px;
+      width: 200px;
+      height: 200px;
+      line-height: 500px;
       font-size: 35px;
       font-family: 'Bebas Neue', sans-serif;
       background: linear-gradient(5deg, transparent 5%, #ff0101 15%);
@@ -146,15 +260,6 @@
       }
     }
     
-    @media (min-width: 100px) {
-      .button-return-store,
-      .button-return-store:after {
-        width: 200px;
-        height: 200px;
-        line-height: 500px;
-      }
-    }
-    
     /*button for log out/sign out*/
     .button-logout {
       --b: 3px;   /* border thickness */
@@ -193,3 +298,23 @@
       background: var(--color);
       color: #fff;
     }
+
+@media only screen and (min-width: 500px) {
+  .thankYouBody {
+      font-size: 16px;
+  }
+
+  .tyText-container {
+    margin: 0 10%;
+  }
+
+  .tyText-container p {
+    font-size: 4em;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .tyText-container {
+    margin: 0 30%;
+  }
+}
