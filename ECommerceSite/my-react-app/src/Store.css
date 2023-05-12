@@ -231,6 +231,7 @@
     margin: 0 auto;
 }
 
+/*text area info for items*/
 .card {
     transition: 0.3s;
     width: 300px;
@@ -303,6 +304,7 @@
     cursor: pointer;
 }
 
+/*canvas for model*/
 .canvas {
     height: 100%;
     position: relative;
@@ -311,6 +313,7 @@
     border-radius: 20px;
 }
 
+/*footer*/
 .footer {
     padding: 16px 16px 64px;
     border-top: 3px solid #323232;

@@ -5,8 +5,9 @@ import validate from './ValidateRegister';
 import axios from 'axios';
 import './Register.css';
 
+//register page
 function Signup() {
-    
+    //declare usestates
     const [infos, setInfos] = useState({
         F_Name: '',
         L_Name: '',
@@ -37,6 +38,7 @@ function Signup() {
             country: infos.country,
             zipcode: infos.zipcode
         }
+        //login error check 
         const err = validate(infos);
         setErrors(err);
         console.log(err);
@@ -63,7 +65,7 @@ function Signup() {
     const handleInput = (e) => {
         setInfos(prev => ({...prev, [e.target.name]: [e.target.value]}))
     }
-
+    //html code insertion
     return (
         /* Joshua Header Start */
         <div className="signUpBody">
