@@ -325,7 +325,7 @@ export default function Store() {
 
                 <div className="products">
                     <div className="productItem1" ref={productItem1Ref}>
-                        <div className="card">
+                        <div className="productCard">
                             <Canvas className="canvas">
                                 <OrbitControls enableZoom={false} />
                                 <ambientLight intensity={0.5} />
@@ -348,7 +348,7 @@ export default function Store() {
                     </div>
                             
                     <div className="productItem2" ref={productItem2Ref}>
-                        <div className="card">
+                        <div className="productCard">
                             <Canvas className="canvas">
                                 <OrbitControls enableZoom={false} />
                                 <ambientLight intensity={0.5} />
@@ -372,7 +372,7 @@ export default function Store() {
                     </div>
 
                     <div className="productItem3" ref={productItem3Ref}>
-                        <div className="card">
+                        <div className="productCard">
                             <Canvas className="canvas">
                                 <OrbitControls enableZoom={false} />
                                 <ambientLight intensity={0.5} />
@@ -395,7 +395,7 @@ export default function Store() {
                     </div>
 
                     <div className="productItem4" ref={productItem4Ref}>
-                        <div className="card">
+                        <div className="productCard">
                             <Canvas className="canvas">
                                 <OrbitControls enableZoom={false} />
                                 <ambientLight intensity={0.5} />
@@ -418,7 +418,7 @@ export default function Store() {
                     </div>
 
                     <div className="productItem5" ref={productItem5Ref}>
-                        <div className="card">
+                        <div className="productCard">
                             <Canvas className="canvas">
                                 <OrbitControls enableZoom={false} />
                                 <ambientLight intensity={0.5} />
@@ -441,7 +441,7 @@ export default function Store() {
                     </div>
 
                     <div className="productItem6" ref={productItem6Ref}>
-                        <div className="card">
+                        <div className="productCard">
                             <Canvas className="canvas">
                                 <OrbitControls enableZoom={false} />
                                 <ambientLight intensity={0.5} />

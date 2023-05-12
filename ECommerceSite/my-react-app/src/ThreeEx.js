@@ -15,7 +15,7 @@ import { OrbitControls } from "@react-three/drei";
 //creates the canvas to display the box model
 export default function About() {
     return (
-        <Wrapper className="App">
+        <Wrapper className="AppExample">
             <Background />
             <TextSection />
             <Canvas className="canvas">

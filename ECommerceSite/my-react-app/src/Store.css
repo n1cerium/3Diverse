@@ -189,6 +189,10 @@
     font-size: 1.15em;
 }
 
+.sidebarMenu input:hover {
+    cursor: pointer;
+}
+
 /** products **/
 .products {
     display: grid;
@@ -232,7 +236,7 @@
 }
 
 /*text area info for items*/
-.card {
+.productCard {
     transition: 0.3s;
     width: 300px;
     height: 320px;
@@ -240,12 +244,15 @@
     position: relative;
 }
 
-.card:hover {
+.productCard:hover {
     cursor: grab;
 }
 
-.card:hover:active .description {
+.productCard:hover:active {
     cursor: grabbing;
+}
+
+.productCard:hover:active .description {
     visibility: hidden;
     opacity: 0;
     -webkit-transition: visibility 0.15s, opacity 0.15s linear;
@@ -416,7 +423,7 @@
         grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
     }
 
-    .card {
+    .productCard {
         width: 420px;
     }
 
