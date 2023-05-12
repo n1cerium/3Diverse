@@ -1,4 +1,101 @@
+/* Joshua CSS Start */
+.jLogInBody {
+    margin: 0;
+    font-size: 14px;
+    background-color: #ffffff;
+    background-image:linear-gradient(#434343, #282828);
+}
+
+/*** HEADER ***/
+.jLogInHeader {
+    display: flex;
+    width: 100%;
+    height: 83px;
+    align-items: center;
+    background-color: #202020;
+    border-bottom: 3px solid #323232;
+}
+
+.jLogInHeader .jLogInLogo {
+    flex: 0 0 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.jLogInHeader .jLogInLogo h1 {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    font-size: 3.5em;
+    color: white;
+}
+
+/** logo **/
+.jLogInLogo h1 {
+    width: fit-content;
+}
+
+.jLogInLogo h1:hover {
+    cursor: pointer;
+}
+
+.jLogInLogo a {
+    text-decoration: none;
+    color: white;
+}
+
 #login-body {
+    display: block;
+    padding: 100px 0;
+    background-color: transparent;
+    background-image:
+        linear-gradient(
+            0deg, 
+            transparent 25%, 
+            rgba(255, 255, 255, .05) 25%,
+            rgba(255, 255, 255, .05) 26%, 
+            transparent 27%, 
+            transparent 74%, 
+            rgba(255, 255, 255, .05) 75%,
+            rgba(255, 255, 255, .05) 76%,
+            transparent 77%,
+            transparent
+        ),
+        linear-gradient(
+            90deg,
+            transparent 24%,
+            rgba(255, 255, 255, .05) 25%,
+            rgba(255, 255, 255, .05) 26%,
+            transparent 27%,
+            transparent 74%,
+            rgba(255, 255, 255, .05) 75%,
+            rgba(255, 255, 255, .05) 76%,
+            transparent 77%,
+            transparent
+        );
+    height:100%;
+    background-size:50px 50px;
+}
+
+#login-page h2 {
+    font-size: 2em;
+}
+
+#login-form {
+    font-size: 1.05em;
+}
+
+.footer {
+    padding: 16px 16px 64px;
+    border-top: 3px solid #323232;
+    background-color: #202020;
+    color: white;
+    font-size: 1em;
+}
+
+/* Joshua CSS End */
+
+/* #login-body {
     background-color: transparent;
     background-image: linear-gradient(0deg, transparent 25%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
     background-size: 50px 50px;
@@ -6,22 +103,19 @@
     position: absolute;
     height: 100%;
     width: 100%;
-}
+} */
 
 #login-page {
     display: grid;
     justify-content: center;
     align-content: center;
-    margin-top: 15%;
 }
 
 #login-form {
     height: 13em;
     width: 20em;
-    background-color: #6C4D78;
-    background-image: linear-gradient( 0deg, transparent 25%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent ), linear-gradient( 90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent );
+    background-color: #6C4D7890;
     height: 100%;
-    background-size: 50px 50px;
     color:white;
 }
 
@@ -37,6 +131,7 @@ h2 {
 }
 
 #link {
+    padding-top: 10px;
     color: #AE7DC1;
 }
 
@@ -48,4 +143,10 @@ h2 {
     color: #EE4B2B;
     font-size: 1em;
     float: left;
+}
+
+@media only screen and (min-width: 500px) {
+    .jLogInBody {
+        font-size: 16px;
+    }
 }
