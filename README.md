@@ -7,5 +7,6 @@
 * Three.js - An API for displaying 3D items on the page
 * React-three/fiber & drei - A React render for Three.js to create canvas and to control orbit and lights
 * Axios - HTTP request for sending data to the HTTP or getting data from the HTTP
-* Express.js - Node.js framework that handles managing the servers and building a RESTful APIs
-* MySql =
+* Express.js - Node.js framework that handles managing the servers and handling getting thr data from HTTP request from the front-end
+* MySql - Node.js module that handles posting  the user data to the database and getting the requested data from the database
+
