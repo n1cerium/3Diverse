@@ -13,7 +13,7 @@
 * Amazon RDS
 * Heroku
 
-### Launch Site: [3Diverse](https://threeverse.herokuapp.com/)
+### Launch Site: Unavailable
 
 ### Images
 #### Shop Page when user has not logged in yet
